@@ -1,0 +1,20 @@
+(54304, 3073)
+(10349, 3073)
+(59474, 3073)
+(5179, 3073)
+Traceback (most recent call last):
+  File "generate_few_shot_data.py", line 42, in <module>
+    train_df_encoded_new.to_csv(f"RN_few_shot_data/50_percent/train-{SPLIT}.csv",index=False)
+  File "/home/yhuang5/.local/lib/python3.6/site-packages/pandas/core/generic.py", line 3170, in to_csv
+    formatter.save()
+  File "/home/yhuang5/.local/lib/python3.6/site-packages/pandas/io/formats/csvs.py", line 227, in save
+    f.close()
+OSError: [Errno 122] Disk quota exceeded
+(54917, 3073)
+(9736, 3073)
+(59782, 3073)
+(4871, 3073)
+(54380, 3073)
+(10273, 3073)
+(59513, 3073)
+(5140, 3073)

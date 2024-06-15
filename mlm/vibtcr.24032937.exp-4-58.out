@@ -1,0 +1,173 @@
+07/14/2023 07:41:27 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+07/14/2023 07:41:27 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'fsdp_min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/test-mlm/runs/Jul14_07-41-26_exp-4-58,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=3.0,
+optim=adamw_hf,
+optim_args=None,
+output_dir=/test-mlm,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=/test-mlm,
+save_on_each_node=False,
+save_safetensors=False,
+save_steps=500,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+xpu_backend=None,
+)
+07/14/2023 07:41:27 - INFO - datasets.builder - Using custom data configuration default-17f3948ee5158af1
+07/14/2023 07:41:27 - INFO - datasets.info - Loading Dataset Infos from /home/yhuang5/mlm/.env/lib64/python3.9/site-packages/datasets/packaged_modules/csv
+07/14/2023 07:41:27 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+07/14/2023 07:41:27 - INFO - datasets.info - Loading Dataset info from /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d
+07/14/2023 07:41:27 - WARNING - datasets.builder - Found cached dataset csv (/home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d)
+07/14/2023 07:41:27 - INFO - datasets.info - Loading Dataset info from /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 165.20it/s]
+[INFO|configuration_utils.py:712] 2023-07-14 07:41:27,562 >> loading configuration file config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--facebook--esm2_t12_35M_UR50D/snapshots/6fbf070e65b0b7291e7bbcd451118c216cff79d8/config.json
+[INFO|configuration_utils.py:768] 2023-07-14 07:41:27,563 >> Model config EsmConfig {
+  "_name_or_path": "facebook/esm2_t12_35M_UR50D",
+  "architectures": [
+    "EsmForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.0,
+  "classifier_dropout": null,
+  "emb_layer_norm_before": false,
+  "esmfold_config": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.0,
+  "hidden_size": 480,
+  "initializer_range": 0.02,
+  "intermediate_size": 1920,
+  "is_folding_model": false,
+  "layer_norm_eps": 1e-05,
+  "mask_token_id": 32,
+  "max_position_embeddings": 1026,
+  "model_type": "esm",
+  "num_attention_heads": 20,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "rotary",
+  "token_dropout": true,
+  "torch_dtype": "float32",
+  "transformers_version": "4.31.0.dev0",
+  "use_cache": true,
+  "vocab_list": null,
+  "vocab_size": 33
+}
+
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 07:41:27,648 >> loading file vocab.txt from cache at /home/yhuang5/.cache/huggingface/hub/models--facebook--esm2_t12_35M_UR50D/snapshots/6fbf070e65b0b7291e7bbcd451118c216cff79d8/vocab.txt
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 07:41:27,648 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 07:41:27,648 >> loading file special_tokens_map.json from cache at /home/yhuang5/.cache/huggingface/hub/models--facebook--esm2_t12_35M_UR50D/snapshots/6fbf070e65b0b7291e7bbcd451118c216cff79d8/special_tokens_map.json
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 07:41:27,648 >> loading file tokenizer_config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--facebook--esm2_t12_35M_UR50D/snapshots/6fbf070e65b0b7291e7bbcd451118c216cff79d8/tokenizer_config.json
+[INFO|modeling_utils.py:2603] 2023-07-14 07:41:27,652 >> loading weights file model.safetensors from cache at /home/yhuang5/.cache/huggingface/hub/models--facebook--esm2_t12_35M_UR50D/snapshots/6fbf070e65b0b7291e7bbcd451118c216cff79d8/model.safetensors
+[INFO|modeling_utils.py:3329] 2023-07-14 07:41:28,095 >> All model checkpoint weights were used when initializing EsmForMaskedLM.
+
+[INFO|modeling_utils.py:3337] 2023-07-14 07:41:28,095 >> All the weights of EsmForMaskedLM were initialized from the model checkpoint at facebook/esm2_t12_35M_UR50D.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use EsmForMaskedLM for predictions without further training.
+07/14/2023 07:41:28 - WARNING - datasets.arrow_dataset - Loading cached processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-20d6b735f98dc1ed.arrow
+07/14/2023 07:41:28 - WARNING - datasets.arrow_dataset - Loading cached processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-070f60446013ac4a.arrow
+07/14/2023 07:41:28 - WARNING - datasets.arrow_dataset - Loading cached processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-44c290d552aaa386.arrow
+07/14/2023 07:41:28 - WARNING - datasets.arrow_dataset - Loading cached processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-fd3e706e5c886aac.arrow
+Traceback (most recent call last):
+  File "/home/yhuang5/mlm/transformers/examples/pytorch/language-modeling/run_mlm.py", line 1303, in <module>
+    main()
+  File "/home/yhuang5/mlm/transformers/examples/pytorch/language-modeling/run_mlm.py", line 1161, in main
+    trainer = Trainer(
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/trainer.py", line 559, in __init__
+    os.makedirs(self.args.output_dir, exist_ok=True)
+  File "/usr/lib64/python3.9/os.py", line 225, in makedirs
+    mkdir(name, mode)
+PermissionError: [Errno 13] Permission denied: '/test-mlm'

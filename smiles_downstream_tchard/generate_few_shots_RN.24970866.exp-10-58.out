@@ -1,0 +1,43 @@
+(53371, 2302)
+(11282, 2302)
+(59009, 2302)
+(5644, 2302)
+Traceback (most recent call last):
+  File "generate_few_shots_data.py", line 44, in <module>
+    train_df_encoded_new.to_csv(f"RN_few_shot_data/50_percent/train-{SPLIT}.csv",index=False)
+  File "/home/yhuang5/smiles_downstream_tchard/.env/lib64/python3.6/site-packages/pandas/core/generic.py", line 3170, in to_csv
+    formatter.save()
+  File "/home/yhuang5/smiles_downstream_tchard/.env/lib64/python3.6/site-packages/pandas/io/formats/csvs.py", line 190, in save
+    compression=dict(self.compression_args, method=self.compression),
+  File "/home/yhuang5/smiles_downstream_tchard/.env/lib64/python3.6/site-packages/pandas/io/common.py", line 493, in get_handle
+    f = open(path_or_buf, mode, encoding=encoding, errors=errors, newline="")
+FileNotFoundError: [Errno 2] No such file or directory: 'RN_few_shot_data/50_percent/train-0.csv'
+(53790, 2302)
+(10863, 2302)
+(59217, 2302)
+(5436, 2302)
+Traceback (most recent call last):
+  File "generate_few_shots_data.py", line 44, in <module>
+    train_df_encoded_new.to_csv(f"RN_few_shot_data/50_percent/train-{SPLIT}.csv",index=False)
+  File "/home/yhuang5/smiles_downstream_tchard/.env/lib64/python3.6/site-packages/pandas/core/generic.py", line 3170, in to_csv
+    formatter.save()
+  File "/home/yhuang5/smiles_downstream_tchard/.env/lib64/python3.6/site-packages/pandas/io/formats/csvs.py", line 190, in save
+    compression=dict(self.compression_args, method=self.compression),
+  File "/home/yhuang5/smiles_downstream_tchard/.env/lib64/python3.6/site-packages/pandas/io/common.py", line 493, in get_handle
+    f = open(path_or_buf, mode, encoding=encoding, errors=errors, newline="")
+FileNotFoundError: [Errno 2] No such file or directory: 'RN_few_shot_data/50_percent/train-1.csv'
+(54304, 2302)
+(10349, 2302)
+(59474, 2302)
+(5179, 2302)
+Traceback (most recent call last):
+  File "generate_few_shots_data.py", line 44, in <module>
+    train_df_encoded_new.to_csv(f"RN_few_shot_data/50_percent/train-{SPLIT}.csv",index=False)
+  File "/home/yhuang5/smiles_downstream_tchard/.env/lib64/python3.6/site-packages/pandas/core/generic.py", line 3170, in to_csv
+    formatter.save()
+  File "/home/yhuang5/smiles_downstream_tchard/.env/lib64/python3.6/site-packages/pandas/io/formats/csvs.py", line 190, in save
+    compression=dict(self.compression_args, method=self.compression),
+  File "/home/yhuang5/smiles_downstream_tchard/.env/lib64/python3.6/site-packages/pandas/io/common.py", line 493, in get_handle
+    f = open(path_or_buf, mode, encoding=encoding, errors=errors, newline="")
+FileNotFoundError: [Errno 2] No such file or directory: 'RN_few_shot_data/50_percent/train-2.csv'
+slurmstepd: error: *** JOB 24970866 ON exp-10-58 CANCELLED AT 2023-09-01T07:59:31 ***

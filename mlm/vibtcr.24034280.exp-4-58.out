@@ -1,0 +1,308 @@
+07/14/2023 09:36:50 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+07/14/2023 09:36:50 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'fsdp_min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=results_protbert/runs/Jul14_09-36-50_exp-4-58,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=3.0,
+optim=adamw_hf,
+optim_args=None,
+output_dir=results_protbert,
+overwrite_output_dir=True,
+past_index=-1,
+per_device_eval_batch_size=4,
+per_device_train_batch_size=4,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=results_protbert,
+save_on_each_node=False,
+save_safetensors=False,
+save_steps=500,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+xpu_backend=None,
+)
+07/14/2023 09:36:51 - INFO - datasets.builder - Using custom data configuration default-17f3948ee5158af1
+07/14/2023 09:36:51 - INFO - datasets.info - Loading Dataset Infos from /home/yhuang5/mlm/.env/lib64/python3.9/site-packages/datasets/packaged_modules/csv
+07/14/2023 09:36:51 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+07/14/2023 09:36:51 - INFO - datasets.info - Loading Dataset info from /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d
+07/14/2023 09:36:51 - WARNING - datasets.builder - Found cached dataset csv (/home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d)
+07/14/2023 09:36:51 - INFO - datasets.info - Loading Dataset info from /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 905.90it/s]
+[INFO|configuration_utils.py:712] 2023-07-14 09:36:51,379 >> loading configuration file config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/config.json
+[INFO|configuration_utils.py:768] 2023-07-14 09:36:51,380 >> Model config BertConfig {
+  "_name_or_path": "Rostlab/prot_bert",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.0,
+  "classifier_dropout": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.0,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 40000,
+  "model_type": "bert",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 30,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.31.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30
+}
+
+[INFO|configuration_utils.py:712] 2023-07-14 09:36:51,463 >> loading configuration file config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/config.json
+[INFO|configuration_utils.py:768] 2023-07-14 09:36:51,464 >> Model config BertConfig {
+  "_name_or_path": "Rostlab/prot_bert",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.0,
+  "classifier_dropout": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.0,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 40000,
+  "model_type": "bert",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 30,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.31.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30
+}
+
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 09:36:51,465 >> loading file vocab.txt from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/vocab.txt
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 09:36:51,465 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 09:36:51,465 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 09:36:51,465 >> loading file special_tokens_map.json from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/special_tokens_map.json
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 09:36:51,465 >> loading file tokenizer_config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/tokenizer_config.json
+[INFO|configuration_utils.py:712] 2023-07-14 09:36:51,466 >> loading configuration file config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/config.json
+[INFO|configuration_utils.py:768] 2023-07-14 09:36:51,466 >> Model config BertConfig {
+  "_name_or_path": "Rostlab/prot_bert",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.0,
+  "classifier_dropout": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.0,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 40000,
+  "model_type": "bert",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 30,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.31.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30
+}
+
+[INFO|configuration_utils.py:712] 2023-07-14 09:36:51,467 >> loading configuration file config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/config.json
+[INFO|configuration_utils.py:768] 2023-07-14 09:36:51,468 >> Model config BertConfig {
+  "_name_or_path": "Rostlab/prot_bert",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.0,
+  "classifier_dropout": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.0,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 40000,
+  "model_type": "bert",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 30,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.31.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30
+}
+
+[INFO|modeling_utils.py:2603] 2023-07-14 09:36:51,476 >> loading weights file pytorch_model.bin from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/pytorch_model.bin
+[INFO|configuration_utils.py:599] 2023-07-14 09:36:53,812 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "pad_token_id": 0,
+  "transformers_version": "4.31.0.dev0"
+}
+
+[WARNING|modeling_utils.py:3319] 2023-07-14 09:36:57,268 >> Some weights of the model checkpoint at Rostlab/prot_bert were not used when initializing BertForMaskedLM: ['cls.seq_relationship.bias', 'bert.pooler.dense.weight', 'bert.pooler.dense.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+[INFO|modeling_utils.py:3337] 2023-07-14 09:36:57,269 >> All the weights of BertForMaskedLM were initialized from the model checkpoint at Rostlab/prot_bert.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertForMaskedLM for predictions without further training.
+[INFO|modeling_utils.py:2949] 2023-07-14 09:36:57,373 >> Generation config file not found, using a generation config created from the model config.
+07/14/2023 09:36:57 - WARNING - __main__ - The chosen tokenizer supports a `model_max_length` that is longer than the default `block_size` value of 1024. If you would like to use a longer `block_size` up to `tokenizer.model_max_length` you can override this default with `--block_size xxx`.
+07/14/2023 09:36:57 - WARNING - datasets.arrow_dataset - Loading cached processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-ca25af36f13db854.arrow
+07/14/2023 09:36:57 - WARNING - datasets.arrow_dataset - Loading cached processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-97421f91bfb1efc5.arrow
+07/14/2023 09:36:57 - WARNING - datasets.arrow_dataset - Loading cached processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-48199d8a156c896d.arrow
+07/14/2023 09:36:57 - WARNING - datasets.arrow_dataset - Loading cached processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-1f2d332b6f30328f.arrow
+[INFO|trainer.py:763] 2023-07-14 09:36:59,339 >> The following columns in the evaluation set don't have a corresponding argument in `BertForMaskedLM.forward` and have been ignored: special_tokens_mask. If special_tokens_mask are not expected by `BertForMaskedLM.forward`,  you can safely ignore this message.
+[INFO|trainer.py:3081] 2023-07-14 09:36:59,346 >> ***** Running Evaluation *****
+[INFO|trainer.py:3083] 2023-07-14 09:36:59,346 >>   Num examples = 18
+[INFO|trainer.py:3086] 2023-07-14 09:36:59,346 >>   Batch size = 4
+[WARNING|logging.py:280] 2023-07-14 09:36:59,352 >> You're using a BertTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+  0%|          | 0/5 [00:00<?, ?it/s] 40%|████      | 2/5 [00:00<00:00,  5.23it/s] 60%|██████    | 3/5 [00:00<00:00,  3.71it/s] 80%|████████  | 4/5 [00:01<00:00,  3.23it/s]100%|██████████| 5/5 [00:01<00:00,  3.74it/s]/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/numpy/lib/function_base.py:520: RuntimeWarning: Mean of empty slice.
+  avg = a.mean(axis, **keepdims_kw)
+/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+100%|██████████| 5/5 [00:01<00:00,  3.63it/s]
+[INFO|trainer.py:763] 2023-07-14 09:37:01,657 >> The following columns in the training set don't have a corresponding argument in `BertForMaskedLM.forward` and have been ignored: special_tokens_mask. If special_tokens_mask are not expected by `BertForMaskedLM.forward`,  you can safely ignore this message.
+/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1686] 2023-07-14 09:37:01,671 >> ***** Running training *****
+[INFO|trainer.py:1687] 2023-07-14 09:37:01,672 >>   Num examples = 73
+[INFO|trainer.py:1688] 2023-07-14 09:37:01,672 >>   Num Epochs = 3
+[INFO|trainer.py:1689] 2023-07-14 09:37:01,672 >>   Instantaneous batch size per device = 4
+[INFO|trainer.py:1692] 2023-07-14 09:37:01,672 >>   Total train batch size (w. parallel, distributed & accumulation) = 4
+[INFO|trainer.py:1693] 2023-07-14 09:37:01,672 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:1694] 2023-07-14 09:37:01,672 >>   Total optimization steps = 57
+[INFO|trainer.py:1695] 2023-07-14 09:37:01,673 >>   Number of trainable parameters = 419,933,214
+>>> Perplexity: nan
+  0%|          | 0/57 [00:00<?, ?it/s]  2%|▏         | 1/57 [00:01<01:01,  1.09s/it]  4%|▎         | 2/57 [00:02<00:59,  1.08s/it]  5%|▌         | 3/57 [00:03<00:58,  1.08s/it]  7%|▋         | 4/57 [00:04<00:56,  1.08s/it]  9%|▉         | 5/57 [00:05<00:55,  1.07s/it] 11%|█         | 6/57 [00:06<00:54,  1.07s/it] 12%|█▏        | 7/57 [00:07<00:53,  1.07s/it] 14%|█▍        | 8/57 [00:08<00:52,  1.07s/it] 16%|█▌        | 9/57 [00:09<00:51,  1.07s/it] 18%|█▊        | 10/57 [00:10<00:50,  1.07s/it] 19%|█▉        | 11/57 [00:11<00:49,  1.07s/it] 21%|██        | 12/57 [00:12<00:48,  1.07s/it] 23%|██▎       | 13/57 [00:13<00:47,  1.08s/it] 25%|██▍       | 14/57 [00:15<00:46,  1.08s/it] 26%|██▋       | 15/57 [00:16<00:45,  1.07s/it] 28%|██▊       | 16/57 [00:17<00:44,  1.08s/it] 30%|██▉       | 17/57 [00:18<00:43,  1.08s/it] 32%|███▏      | 18/57 [00:19<00:41,  1.07s/it] 33%|███▎      | 19/57 [00:19<00:32,  1.17it/s] 35%|███▌      | 20/57 [00:20<00:34,  1.08it/s] 37%|███▋      | 21/57 [00:21<00:34,  1.03it/s] 39%|███▊      | 22/57 [00:22<00:35,  1.00s/it] 40%|████      | 23/57 [00:24<00:34,  1.02s/it] 42%|████▏     | 24/57 [00:25<00:34,  1.04s/it] 44%|████▍     | 25/57 [00:26<00:33,  1.05s/it] 46%|████▌     | 26/57 [00:27<00:32,  1.06s/it] 47%|████▋     | 27/57 [00:28<00:31,  1.06s/it] 49%|████▉     | 28/57 [00:29<00:30,  1.07s/it] 51%|█████     | 29/57 [00:30<00:30,  1.07s/it] 53%|█████▎    | 30/57 [00:31<00:28,  1.07s/it] 54%|█████▍    | 31/57 [00:32<00:27,  1.07s/it] 56%|█████▌    | 32/57 [00:33<00:26,  1.08s/it] 58%|█████▊    | 33/57 [00:34<00:25,  1.08s/it] 60%|█████▉    | 34/57 [00:35<00:24,  1.08s/it] 61%|██████▏   | 35/57 [00:36<00:23,  1.08s/it] 63%|██████▎   | 36/57 [00:38<00:22,  1.08s/it] 65%|██████▍   | 37/57 [00:39<00:21,  1.08s/it] 67%|██████▋   | 38/57 [00:39<00:16,  1.17it/s] 68%|██████▊   | 39/57 [00:40<00:16,  1.08it/s] 70%|███████   | 40/57 [00:41<00:16,  1.03it/s] 72%|███████▏  | 41/57 [00:42<00:16,  1.00s/it] 74%|███████▎  | 42/57 [00:43<00:15,  1.03s/it] 75%|███████▌  | 43/57 [00:44<00:14,  1.04s/it] 77%|███████▋  | 44/57 [00:45<00:13,  1.05s/it] 79%|███████▉  | 45/57 [00:46<00:12,  1.06s/it] 81%|████████  | 46/57 [00:48<00:11,  1.07s/it] 82%|████████▏ | 47/57 [00:49<00:10,  1.07s/it] 84%|████████▍ | 48/57 [00:50<00:09,  1.07s/it] 86%|████████▌ | 49/57 [00:51<00:08,  1.07s/it] 88%|████████▊ | 50/57 [00:52<00:07,  1.07s/it] 89%|████████▉ | 51/57 [00:53<00:06,  1.08s/it] 91%|█████████ | 52/57 [00:54<00:05,  1.08s/it] 93%|█████████▎| 53/57 [00:55<00:04,  1.08s/it] 95%|█████████▍| 54/57 [00:56<00:03,  1.08s/it] 96%|█████████▋| 55/57 [00:57<00:02,  1.08s/it] 98%|█████████▊| 56/57 [00:58<00:01,  1.08s/it]100%|██████████| 57/57 [00:59<00:00,  1.17it/s][INFO|trainer.py:1934] 2023-07-14 09:38:00,861 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+                                               100%|██████████| 57/57 [00:59<00:00,  1.17it/s]100%|██████████| 57/57 [00:59<00:00,  1.04s/it]
+[INFO|trainer.py:2807] 2023-07-14 09:38:00,863 >> Saving model checkpoint to results_protbert
+[INFO|configuration_utils.py:458] 2023-07-14 09:38:00,891 >> Configuration saved in results_protbert/config.json
+[INFO|configuration_utils.py:375] 2023-07-14 09:38:00,909 >> Configuration saved in results_protbert/generation_config.json
+[INFO|modeling_utils.py:1851] 2023-07-14 09:38:07,464 >> Model weights saved in results_protbert/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2214] 2023-07-14 09:38:07,693 >> tokenizer config file saved in results_protbert/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2221] 2023-07-14 09:38:07,864 >> Special tokens file saved in results_protbert/special_tokens_map.json
+{'train_runtime': 59.1884, 'train_samples_per_second': 3.7, 'train_steps_per_second': 0.963, 'train_loss': 0.0, 'epoch': 3.0}
+***** train metrics *****
+  epoch                    =        3.0
+  train_loss               =        0.0
+  train_runtime            = 0:00:59.18
+  train_samples            =         73
+  train_samples_per_second =        3.7
+  train_steps_per_second   =      0.963
+07/14/2023 09:38:08 - INFO - __main__ - *** Evaluate ***
+[INFO|trainer.py:763] 2023-07-14 09:38:08,141 >> The following columns in the evaluation set don't have a corresponding argument in `BertForMaskedLM.forward` and have been ignored: special_tokens_mask. If special_tokens_mask are not expected by `BertForMaskedLM.forward`,  you can safely ignore this message.
+[INFO|trainer.py:3081] 2023-07-14 09:38:08,143 >> ***** Running Evaluation *****
+[INFO|trainer.py:3083] 2023-07-14 09:38:08,143 >>   Num examples = 18
+[INFO|trainer.py:3086] 2023-07-14 09:38:08,143 >>   Batch size = 4
+  0%|          | 0/5 [00:00<?, ?it/s] 40%|████      | 2/5 [00:00<00:00,  5.22it/s] 60%|██████    | 3/5 [00:00<00:00,  3.69it/s] 80%|████████  | 4/5 [00:01<00:00,  3.20it/s]100%|██████████| 5/5 [00:01<00:00,  3.71it/s]/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/numpy/lib/function_base.py:520: RuntimeWarning: Mean of empty slice.
+  avg = a.mean(axis, **keepdims_kw)
+/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+100%|██████████| 5/5 [00:01<00:00,  3.62it/s]
+[INFO|modelcard.py:452] 2023-07-14 09:38:10,045 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Masked Language Modeling', 'type': 'fill-mask'}, 'metrics': [{'name': 'Accuracy', 'type': 'accuracy', 'value': nan}]}
+***** eval metrics *****
+  epoch                   =        3.0
+  eval_accuracy           =        nan
+  eval_loss               =        nan
+  eval_runtime            = 0:00:01.78
+  eval_samples            =         18
+  eval_samples_per_second =      10.09
+  eval_steps_per_second   =      2.803
+  perplexity              =        nan

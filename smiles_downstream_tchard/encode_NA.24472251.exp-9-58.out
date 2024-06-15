@@ -1,0 +1,24 @@
+cuda
+Downloading:   0%|          | 0.00/1.32k [00:00<?, ?B/s]Downloading: 100%|██████████| 1.32k/1.32k [00:00<00:00, 10.5MB/s]
+Downloading:   0%|          | 0.00/7.71k [00:00<?, ?B/s]Downloading: 100%|██████████| 7.71k/7.71k [00:00<00:00, 56.7MB/s]
+Downloading:   0%|          | 0.00/3.14k [00:00<?, ?B/s]Downloading: 100%|██████████| 3.14k/3.14k [00:00<00:00, 27.6MB/s]
+Downloading:   0%|          | 0.00/22.9k [00:00<?, ?B/s]Downloading: 100%|██████████| 22.9k/22.9k [00:00<00:00, 89.3MB/s]
+Downloading:   0%|          | 0.00/280 [00:00<?, ?B/s]Downloading: 100%|██████████| 280/280 [00:00<00:00, 4.11MB/s]
+Downloading:   0%|          | 0.00/710 [00:00<?, ?B/s]Downloading: 100%|██████████| 710/710 [00:00<00:00, 10.2MB/s]
+Downloading:   0%|          | 0.00/168M [00:00<?, ?B/s]Downloading:   0%|          | 51.0k/168M [00:00<06:48, 432kB/s]Downloading:   0%|          | 306k/168M [00:00<02:01, 1.45MB/s]Downloading:   1%|          | 1.26M/168M [00:00<00:35, 4.97MB/s]Downloading:   2%|▏         | 3.94M/168M [00:00<00:13, 13.1MB/s]Downloading:   6%|▌         | 9.34M/168M [00:00<00:05, 27.9MB/s]Downloading:   9%|▉         | 15.2M/168M [00:00<00:04, 38.7MB/s]Downloading:  13%|█▎        | 21.9M/168M [00:00<00:03, 48.8MB/s]Downloading:  16%|█▌        | 26.7M/168M [00:00<00:03, 47.8MB/s]Downloading:  20%|██        | 33.8M/168M [00:00<00:02, 55.7MB/s]Downloading:  23%|██▎       | 39.3M/168M [00:01<00:02, 56.4MB/s]Downloading:  27%|██▋       | 45.8M/168M [00:01<00:02, 57.3MB/s]Downloading:  32%|███▏      | 53.5M/168M [00:01<00:02, 59.4MB/s]Downloading:  36%|███▋      | 61.2M/168M [00:01<00:01, 61.3MB/s]Downloading:  40%|████      | 68.0M/168M [00:01<00:01, 61.7MB/s]Downloading:  44%|████▍     | 74.6M/168M [00:01<00:01, 64.0MB/s]Downloading:  48%|████▊     | 80.8M/168M [00:01<00:01, 61.4MB/s]Downloading:  52%|█████▏    | 87.7M/168M [00:01<00:01, 62.9MB/s]Downloading:  56%|█████▌    | 93.7M/168M [00:02<00:02, 38.3MB/s]Downloading:  60%|██████    | 101M/168M [00:02<00:01, 43.7MB/s] Downloading:  65%|██████▍   | 109M/168M [00:02<00:01, 48.4MB/s]Downloading:  69%|██████▉   | 116M/168M [00:02<00:01, 51.7MB/s]Downloading:  74%|███████▎  | 124M/168M [00:02<00:00, 54.8MB/s]Downloading:  78%|███████▊  | 132M/168M [00:02<00:00, 57.0MB/s]Downloading:  83%|████████▎ | 139M/168M [00:02<00:00, 58.8MB/s]Downloading:  87%|████████▋ | 147M/168M [00:03<00:00, 59.9MB/s]Downloading:  91%|█████████ | 153M/168M [00:03<00:00, 49.9MB/s]Downloading:  95%|█████████▌| 160M/168M [00:03<00:00, 53.2MB/s]Downloading: 100%|█████████▉| 168M/168M [00:03<00:00, 55.9MB/s]Downloading: 100%|██████████| 168M/168M [00:03<00:00, 49.9MB/s]
+Traceback (most recent call last):
+  File "encode.py", line 75, in <module>
+    train_df = pd.read_csv(f"tchard-data/filtered_data_NA/train-{args.dataset}.csv")
+  File "/home/yhuang5/smiles_downstream_tchard/.env/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/yhuang5/smiles_downstream_tchard/.env/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/home/yhuang5/smiles_downstream_tchard/.env/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+    self._make_engine(self.engine)
+  File "/home/yhuang5/smiles_downstream_tchard/.env/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/home/yhuang5/smiles_downstream_tchard/.env/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] No such file or directory: 'tchard-data/filtered_data_NA/train-0.csv'

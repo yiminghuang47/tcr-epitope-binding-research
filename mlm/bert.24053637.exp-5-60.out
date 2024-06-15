@@ -1,0 +1,661 @@
+07/15/2023 12:42:15 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+07/15/2023 12:42:15 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'fsdp_min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=results_tcrbert/runs/Jul15_12-42-15_exp-5-60,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=3.0,
+optim=adamw_hf,
+optim_args=None,
+output_dir=results_tcrbert,
+overwrite_output_dir=True,
+past_index=-1,
+per_device_eval_batch_size=4,
+per_device_train_batch_size=4,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=results_tcrbert,
+save_on_each_node=False,
+save_safetensors=False,
+save_steps=500,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+xpu_backend=None,
+)
+07/15/2023 12:42:16 - INFO - datasets.builder - Using custom data configuration default-17f3948ee5158af1
+07/15/2023 12:42:16 - INFO - datasets.info - Loading Dataset Infos from /home/yhuang5/mlm/.env/lib64/python3.9/site-packages/datasets/packaged_modules/csv
+07/15/2023 12:42:16 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+07/15/2023 12:42:16 - INFO - datasets.info - Loading Dataset info from /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d
+07/15/2023 12:42:16 - WARNING - datasets.builder - Found cached dataset csv (/home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d)
+07/15/2023 12:42:16 - INFO - datasets.info - Loading Dataset info from /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 149.43it/s]
+Downloading (…)lve/main/config.json:   0%|          | 0.00/2.64k [00:00<?, ?B/s]Downloading (…)lve/main/config.json: 100%|██████████| 2.64k/2.64k [00:00<00:00, 892kB/s]
+[INFO|configuration_utils.py:712] 2023-07-15 12:42:16,518 >> loading configuration file config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--wukevin--tcr-bert/snapshots/ef65ddcb4e549990e584680e27f9ae2618c884ff/config.json
+[INFO|configuration_utils.py:768] 2023-07-15 12:42:16,518 >> Model config BertConfig {
+  "_name_or_path": "wukevin/tcr-bert",
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LLWNGPMAV",
+    "1": "RPRGEVRFL",
+    "2": "ATDALMTGY",
+    "3": "HSKKKCDEL",
+    "4": "KAFSPEVIPMF",
+    "5": "KRWIILGLNK",
+    "6": "KRWIIMGLNK",
+    "7": "TPQDLNTML",
+    "8": "EIYKRWII",
+    "9": "ISPRTL-W",
+    "10": "FLKEKGGL",
+    "11": "HPKVSSEVHI",
+    "12": "IIKDYGKQM",
+    "13": "LPPIVAKEI",
+    "14": "RFPLTFGWCF",
+    "15": "RYPLTFGWCF",
+    "16": "TPGPGVRYPL",
+    "17": "TQGYFPDWQNY",
+    "18": "FPRPWLHGL",
+    "19": "RYPLTFGW",
+    "20": "ELRRKMMYM",
+    "21": "QIKVRVDMV",
+    "22": "QIKVRVKMV",
+    "23": "VLEETSVML",
+    "24": "FPTKDVAL",
+    "25": "NLVPMVATV",
+    "26": "RPHERNGFTVL",
+    "27": "TPRVTGGGAM",
+    "28": "VTEHDTLLY",
+    "29": "YLAMPFATPMEAELARRSLA",
+    "30": "GLCTLVAML",
+    "31": "YVLDHLIVV",
+    "32": "EPLPQGQLTAY",
+    "33": "RAKFKQLL",
+    "34": "HPVGEADYFEY",
+    "35": "FLRGRAYGL",
+    "36": "AVFDRKSDAK",
+    "37": "IVTDFSVIK",
+    "38": "NFIRMVISNPAAT",
+    "39": "KRGIVEQSSTSISSL",
+    "40": "ENPVVHFFKNIVTPR",
+    "41": "GILGFVFTL",
+    "42": "PQPELPYPQPE",
+    "43": "FWIDLFETIG",
+    "44": "other"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 1536,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_10": 10,
+    "LABEL_11": 11,
+    "LABEL_12": 12,
+    "LABEL_13": 13,
+    "LABEL_14": 14,
+    "LABEL_15": 15,
+    "LABEL_16": 16,
+    "LABEL_17": 17,
+    "LABEL_18": 18,
+    "LABEL_19": 19,
+    "LABEL_2": 2,
+    "LABEL_20": 20,
+    "LABEL_21": 21,
+    "LABEL_22": 22,
+    "LABEL_23": 23,
+    "LABEL_24": 24,
+    "LABEL_25": 25,
+    "LABEL_26": 26,
+    "LABEL_27": 27,
+    "LABEL_28": 28,
+    "LABEL_29": 29,
+    "LABEL_3": 3,
+    "LABEL_30": 30,
+    "LABEL_31": 31,
+    "LABEL_32": 32,
+    "LABEL_33": 33,
+    "LABEL_34": 34,
+    "LABEL_35": 35,
+    "LABEL_36": 36,
+    "LABEL_37": 37,
+    "LABEL_38": 38,
+    "LABEL_39": 39,
+    "LABEL_4": 4,
+    "LABEL_40": 40,
+    "LABEL_41": 41,
+    "LABEL_42": 42,
+    "LABEL_43": 43,
+    "LABEL_44": 44,
+    "LABEL_5": 5,
+    "LABEL_6": 6,
+    "LABEL_7": 7,
+    "LABEL_8": 8,
+    "LABEL_9": 9
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 64,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 21,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.31.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 26
+}
+
+Downloading (…)okenizer_config.json:   0%|          | 0.00/265 [00:00<?, ?B/s]Downloading (…)okenizer_config.json: 100%|██████████| 265/265 [00:00<00:00, 140kB/s]
+[INFO|configuration_utils.py:712] 2023-07-15 12:42:16,800 >> loading configuration file config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--wukevin--tcr-bert/snapshots/ef65ddcb4e549990e584680e27f9ae2618c884ff/config.json
+[INFO|configuration_utils.py:768] 2023-07-15 12:42:16,801 >> Model config BertConfig {
+  "_name_or_path": "wukevin/tcr-bert",
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LLWNGPMAV",
+    "1": "RPRGEVRFL",
+    "2": "ATDALMTGY",
+    "3": "HSKKKCDEL",
+    "4": "KAFSPEVIPMF",
+    "5": "KRWIILGLNK",
+    "6": "KRWIIMGLNK",
+    "7": "TPQDLNTML",
+    "8": "EIYKRWII",
+    "9": "ISPRTL-W",
+    "10": "FLKEKGGL",
+    "11": "HPKVSSEVHI",
+    "12": "IIKDYGKQM",
+    "13": "LPPIVAKEI",
+    "14": "RFPLTFGWCF",
+    "15": "RYPLTFGWCF",
+    "16": "TPGPGVRYPL",
+    "17": "TQGYFPDWQNY",
+    "18": "FPRPWLHGL",
+    "19": "RYPLTFGW",
+    "20": "ELRRKMMYM",
+    "21": "QIKVRVDMV",
+    "22": "QIKVRVKMV",
+    "23": "VLEETSVML",
+    "24": "FPTKDVAL",
+    "25": "NLVPMVATV",
+    "26": "RPHERNGFTVL",
+    "27": "TPRVTGGGAM",
+    "28": "VTEHDTLLY",
+    "29": "YLAMPFATPMEAELARRSLA",
+    "30": "GLCTLVAML",
+    "31": "YVLDHLIVV",
+    "32": "EPLPQGQLTAY",
+    "33": "RAKFKQLL",
+    "34": "HPVGEADYFEY",
+    "35": "FLRGRAYGL",
+    "36": "AVFDRKSDAK",
+    "37": "IVTDFSVIK",
+    "38": "NFIRMVISNPAAT",
+    "39": "KRGIVEQSSTSISSL",
+    "40": "ENPVVHFFKNIVTPR",
+    "41": "GILGFVFTL",
+    "42": "PQPELPYPQPE",
+    "43": "FWIDLFETIG",
+    "44": "other"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 1536,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_10": 10,
+    "LABEL_11": 11,
+    "LABEL_12": 12,
+    "LABEL_13": 13,
+    "LABEL_14": 14,
+    "LABEL_15": 15,
+    "LABEL_16": 16,
+    "LABEL_17": 17,
+    "LABEL_18": 18,
+    "LABEL_19": 19,
+    "LABEL_2": 2,
+    "LABEL_20": 20,
+    "LABEL_21": 21,
+    "LABEL_22": 22,
+    "LABEL_23": 23,
+    "LABEL_24": 24,
+    "LABEL_25": 25,
+    "LABEL_26": 26,
+    "LABEL_27": 27,
+    "LABEL_28": 28,
+    "LABEL_29": 29,
+    "LABEL_3": 3,
+    "LABEL_30": 30,
+    "LABEL_31": 31,
+    "LABEL_32": 32,
+    "LABEL_33": 33,
+    "LABEL_34": 34,
+    "LABEL_35": 35,
+    "LABEL_36": 36,
+    "LABEL_37": 37,
+    "LABEL_38": 38,
+    "LABEL_39": 39,
+    "LABEL_4": 4,
+    "LABEL_40": 40,
+    "LABEL_41": 41,
+    "LABEL_42": 42,
+    "LABEL_43": 43,
+    "LABEL_44": 44,
+    "LABEL_5": 5,
+    "LABEL_6": 6,
+    "LABEL_7": 7,
+    "LABEL_8": 8,
+    "LABEL_9": 9
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 64,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 21,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.31.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 26
+}
+
+Downloading (…)solve/main/vocab.txt:   0%|          | 0.00/52.0 [00:00<?, ?B/s]Downloading (…)solve/main/vocab.txt: 100%|██████████| 52.0/52.0 [00:00<00:00, 94.6kB/s]
+Downloading (…)cial_tokens_map.json:   0%|          | 0.00/91.0 [00:00<?, ?B/s]Downloading (…)cial_tokens_map.json: 100%|██████████| 91.0/91.0 [00:00<00:00, 149kB/s]
+[INFO|tokenization_utils_base.py:1843] 2023-07-15 12:42:17,548 >> loading file vocab.txt from cache at /home/yhuang5/.cache/huggingface/hub/models--wukevin--tcr-bert/snapshots/ef65ddcb4e549990e584680e27f9ae2618c884ff/vocab.txt
+[INFO|tokenization_utils_base.py:1843] 2023-07-15 12:42:17,548 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:1843] 2023-07-15 12:42:17,548 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1843] 2023-07-15 12:42:17,548 >> loading file special_tokens_map.json from cache at /home/yhuang5/.cache/huggingface/hub/models--wukevin--tcr-bert/snapshots/ef65ddcb4e549990e584680e27f9ae2618c884ff/special_tokens_map.json
+[INFO|tokenization_utils_base.py:1843] 2023-07-15 12:42:17,548 >> loading file tokenizer_config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--wukevin--tcr-bert/snapshots/ef65ddcb4e549990e584680e27f9ae2618c884ff/tokenizer_config.json
+[INFO|configuration_utils.py:712] 2023-07-15 12:42:17,549 >> loading configuration file config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--wukevin--tcr-bert/snapshots/ef65ddcb4e549990e584680e27f9ae2618c884ff/config.json
+[INFO|configuration_utils.py:768] 2023-07-15 12:42:17,550 >> Model config BertConfig {
+  "_name_or_path": "wukevin/tcr-bert",
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LLWNGPMAV",
+    "1": "RPRGEVRFL",
+    "2": "ATDALMTGY",
+    "3": "HSKKKCDEL",
+    "4": "KAFSPEVIPMF",
+    "5": "KRWIILGLNK",
+    "6": "KRWIIMGLNK",
+    "7": "TPQDLNTML",
+    "8": "EIYKRWII",
+    "9": "ISPRTL-W",
+    "10": "FLKEKGGL",
+    "11": "HPKVSSEVHI",
+    "12": "IIKDYGKQM",
+    "13": "LPPIVAKEI",
+    "14": "RFPLTFGWCF",
+    "15": "RYPLTFGWCF",
+    "16": "TPGPGVRYPL",
+    "17": "TQGYFPDWQNY",
+    "18": "FPRPWLHGL",
+    "19": "RYPLTFGW",
+    "20": "ELRRKMMYM",
+    "21": "QIKVRVDMV",
+    "22": "QIKVRVKMV",
+    "23": "VLEETSVML",
+    "24": "FPTKDVAL",
+    "25": "NLVPMVATV",
+    "26": "RPHERNGFTVL",
+    "27": "TPRVTGGGAM",
+    "28": "VTEHDTLLY",
+    "29": "YLAMPFATPMEAELARRSLA",
+    "30": "GLCTLVAML",
+    "31": "YVLDHLIVV",
+    "32": "EPLPQGQLTAY",
+    "33": "RAKFKQLL",
+    "34": "HPVGEADYFEY",
+    "35": "FLRGRAYGL",
+    "36": "AVFDRKSDAK",
+    "37": "IVTDFSVIK",
+    "38": "NFIRMVISNPAAT",
+    "39": "KRGIVEQSSTSISSL",
+    "40": "ENPVVHFFKNIVTPR",
+    "41": "GILGFVFTL",
+    "42": "PQPELPYPQPE",
+    "43": "FWIDLFETIG",
+    "44": "other"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 1536,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_10": 10,
+    "LABEL_11": 11,
+    "LABEL_12": 12,
+    "LABEL_13": 13,
+    "LABEL_14": 14,
+    "LABEL_15": 15,
+    "LABEL_16": 16,
+    "LABEL_17": 17,
+    "LABEL_18": 18,
+    "LABEL_19": 19,
+    "LABEL_2": 2,
+    "LABEL_20": 20,
+    "LABEL_21": 21,
+    "LABEL_22": 22,
+    "LABEL_23": 23,
+    "LABEL_24": 24,
+    "LABEL_25": 25,
+    "LABEL_26": 26,
+    "LABEL_27": 27,
+    "LABEL_28": 28,
+    "LABEL_29": 29,
+    "LABEL_3": 3,
+    "LABEL_30": 30,
+    "LABEL_31": 31,
+    "LABEL_32": 32,
+    "LABEL_33": 33,
+    "LABEL_34": 34,
+    "LABEL_35": 35,
+    "LABEL_36": 36,
+    "LABEL_37": 37,
+    "LABEL_38": 38,
+    "LABEL_39": 39,
+    "LABEL_4": 4,
+    "LABEL_40": 40,
+    "LABEL_41": 41,
+    "LABEL_42": 42,
+    "LABEL_43": 43,
+    "LABEL_44": 44,
+    "LABEL_5": 5,
+    "LABEL_6": 6,
+    "LABEL_7": 7,
+    "LABEL_8": 8,
+    "LABEL_9": 9
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 64,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 21,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.31.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 26
+}
+
+[INFO|configuration_utils.py:712] 2023-07-15 12:42:17,551 >> loading configuration file config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--wukevin--tcr-bert/snapshots/ef65ddcb4e549990e584680e27f9ae2618c884ff/config.json
+[INFO|configuration_utils.py:768] 2023-07-15 12:42:17,552 >> Model config BertConfig {
+  "_name_or_path": "wukevin/tcr-bert",
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LLWNGPMAV",
+    "1": "RPRGEVRFL",
+    "2": "ATDALMTGY",
+    "3": "HSKKKCDEL",
+    "4": "KAFSPEVIPMF",
+    "5": "KRWIILGLNK",
+    "6": "KRWIIMGLNK",
+    "7": "TPQDLNTML",
+    "8": "EIYKRWII",
+    "9": "ISPRTL-W",
+    "10": "FLKEKGGL",
+    "11": "HPKVSSEVHI",
+    "12": "IIKDYGKQM",
+    "13": "LPPIVAKEI",
+    "14": "RFPLTFGWCF",
+    "15": "RYPLTFGWCF",
+    "16": "TPGPGVRYPL",
+    "17": "TQGYFPDWQNY",
+    "18": "FPRPWLHGL",
+    "19": "RYPLTFGW",
+    "20": "ELRRKMMYM",
+    "21": "QIKVRVDMV",
+    "22": "QIKVRVKMV",
+    "23": "VLEETSVML",
+    "24": "FPTKDVAL",
+    "25": "NLVPMVATV",
+    "26": "RPHERNGFTVL",
+    "27": "TPRVTGGGAM",
+    "28": "VTEHDTLLY",
+    "29": "YLAMPFATPMEAELARRSLA",
+    "30": "GLCTLVAML",
+    "31": "YVLDHLIVV",
+    "32": "EPLPQGQLTAY",
+    "33": "RAKFKQLL",
+    "34": "HPVGEADYFEY",
+    "35": "FLRGRAYGL",
+    "36": "AVFDRKSDAK",
+    "37": "IVTDFSVIK",
+    "38": "NFIRMVISNPAAT",
+    "39": "KRGIVEQSSTSISSL",
+    "40": "ENPVVHFFKNIVTPR",
+    "41": "GILGFVFTL",
+    "42": "PQPELPYPQPE",
+    "43": "FWIDLFETIG",
+    "44": "other"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 1536,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1,
+    "LABEL_10": 10,
+    "LABEL_11": 11,
+    "LABEL_12": 12,
+    "LABEL_13": 13,
+    "LABEL_14": 14,
+    "LABEL_15": 15,
+    "LABEL_16": 16,
+    "LABEL_17": 17,
+    "LABEL_18": 18,
+    "LABEL_19": 19,
+    "LABEL_2": 2,
+    "LABEL_20": 20,
+    "LABEL_21": 21,
+    "LABEL_22": 22,
+    "LABEL_23": 23,
+    "LABEL_24": 24,
+    "LABEL_25": 25,
+    "LABEL_26": 26,
+    "LABEL_27": 27,
+    "LABEL_28": 28,
+    "LABEL_29": 29,
+    "LABEL_3": 3,
+    "LABEL_30": 30,
+    "LABEL_31": 31,
+    "LABEL_32": 32,
+    "LABEL_33": 33,
+    "LABEL_34": 34,
+    "LABEL_35": 35,
+    "LABEL_36": 36,
+    "LABEL_37": 37,
+    "LABEL_38": 38,
+    "LABEL_39": 39,
+    "LABEL_4": 4,
+    "LABEL_40": 40,
+    "LABEL_41": 41,
+    "LABEL_42": 42,
+    "LABEL_43": 43,
+    "LABEL_44": 44,
+    "LABEL_5": 5,
+    "LABEL_6": 6,
+    "LABEL_7": 7,
+    "LABEL_8": 8,
+    "LABEL_9": 9
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 64,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 21,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.31.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 26
+}
+
+Downloading pytorch_model.bin:   0%|          | 0.00/230M [00:00<?, ?B/s]Downloading pytorch_model.bin:   5%|▍         | 10.5M/230M [00:00<00:13, 16.4MB/s]Downloading pytorch_model.bin:   9%|▉         | 21.0M/230M [00:00<00:07, 28.4MB/s]Downloading pytorch_model.bin:  14%|█▎        | 31.5M/230M [00:00<00:05, 38.0MB/s]Downloading pytorch_model.bin:  18%|█▊        | 41.9M/230M [00:01<00:04, 43.5MB/s]Downloading pytorch_model.bin:  23%|██▎       | 52.4M/230M [00:01<00:03, 46.0MB/s]Downloading pytorch_model.bin:  27%|██▋       | 62.9M/230M [00:01<00:03, 52.4MB/s]Downloading pytorch_model.bin:  32%|███▏      | 73.4M/230M [00:01<00:03, 51.7MB/s]Downloading pytorch_model.bin:  37%|███▋      | 83.9M/230M [00:01<00:02, 56.1MB/s]Downloading pytorch_model.bin:  41%|████      | 94.4M/230M [00:02<00:02, 54.9MB/s]Downloading pytorch_model.bin:  46%|████▌     | 105M/230M [00:02<00:02, 53.5MB/s] Downloading pytorch_model.bin:  50%|█████     | 115M/230M [00:02<00:02, 52.7MB/s]Downloading pytorch_model.bin:  55%|█████▍    | 126M/230M [00:02<00:01, 52.2MB/s]Downloading pytorch_model.bin:  59%|█████▉    | 136M/230M [00:02<00:01, 56.6MB/s]Downloading pytorch_model.bin:  64%|██████▍   | 147M/230M [00:03<00:01, 50.3MB/s]Downloading pytorch_model.bin:  68%|██████▊   | 157M/230M [00:03<00:01, 50.6MB/s]Downloading pytorch_model.bin:  73%|███████▎  | 168M/230M [00:03<00:01, 55.6MB/s]Downloading pytorch_model.bin:  78%|███████▊  | 178M/230M [00:03<00:00, 54.0MB/s]Downloading pytorch_model.bin:  82%|████████▏ | 189M/230M [00:03<00:00, 57.6MB/s]Downloading pytorch_model.bin:  87%|████████▋ | 199M/230M [00:04<00:00, 55.9MB/s]Downloading pytorch_model.bin:  91%|█████████▏| 210M/230M [00:04<00:00, 54.6MB/s]Downloading pytorch_model.bin:  96%|█████████▌| 220M/230M [00:04<00:00, 58.4MB/s]Downloading pytorch_model.bin: 100%|██████████| 230M/230M [00:04<00:00, 55.4MB/s]Downloading pytorch_model.bin: 100%|██████████| 230M/230M [00:04<00:00, 50.2MB/s]
+[INFO|modeling_utils.py:2603] 2023-07-15 12:42:23,807 >> loading weights file pytorch_model.bin from cache at /home/yhuang5/.cache/huggingface/hub/models--wukevin--tcr-bert/snapshots/ef65ddcb4e549990e584680e27f9ae2618c884ff/pytorch_model.bin
+[INFO|configuration_utils.py:599] 2023-07-15 12:42:24,156 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "pad_token_id": 21,
+  "transformers_version": "4.31.0.dev0"
+}
+
+[INFO|modeling_utils.py:3319] 2023-07-15 12:42:24,598 >> Some weights of the model checkpoint at wukevin/tcr-bert were not used when initializing BertForMaskedLM: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight', 'classifier.bias', 'classifier.weight']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+[WARNING|modeling_utils.py:3331] 2023-07-15 12:42:24,598 >> Some weights of BertForMaskedLM were not initialized from the model checkpoint at wukevin/tcr-bert and are newly initialized: ['cls.predictions.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.decoder.bias', 'cls.predictions.transform.LayerNorm.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[INFO|modeling_utils.py:2949] 2023-07-15 12:42:24,701 >> Generation config file not found, using a generation config created from the model config.
+07/15/2023 12:42:24 - WARNING - __main__ - The chosen tokenizer supports a `model_max_length` that is longer than the default `block_size` value of 1024. If you would like to use a longer `block_size` up to `tokenizer.model_max_length` you can override this default with `--block_size xxx`.
+Running tokenizer on every text in dataset:   0%|          | 0/36470 [00:00<?, ? examples/s]07/15/2023 12:42:24 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-a49c21461ac884e8.arrow
+Running tokenizer on every text in dataset:  14%|█▎        | 5000/36470 [00:00<00:00, 38814.23 examples/s]Running tokenizer on every text in dataset:  30%|███       | 11000/36470 [00:00<00:00, 34525.01 examples/s]Running tokenizer on every text in dataset:  47%|████▋     | 17000/36470 [00:00<00:00, 32710.92 examples/s]Running tokenizer on every text in dataset:  69%|██████▊   | 25000/36470 [00:00<00:00, 42516.17 examples/s]Running tokenizer on every text in dataset:  90%|█████████ | 33000/36470 [00:00<00:00, 40999.24 examples/s]                                                                                                           Running tokenizer on every text in dataset:   0%|          | 0/9118 [00:00<?, ? examples/s]07/15/2023 12:42:25 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-449093e7154a647e.arrow
+Running tokenizer on every text in dataset:  33%|███▎      | 3000/9118 [00:00<00:00, 22136.61 examples/s]Running tokenizer on every text in dataset: 100%|██████████| 9118/9118 [00:00<00:00, 40890.44 examples/s]                                                                                                         Grouping texts in chunks of 1024:   0%|          | 0/36470 [00:00<?, ? examples/s]07/15/2023 12:42:25 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-a29e1a2f2e467e60.arrow
+Grouping texts in chunks of 1024:  19%|█▉        | 7000/36470 [00:00<00:00, 62403.17 examples/s]Grouping texts in chunks of 1024:  41%|████      | 15000/36470 [00:00<00:00, 68298.58 examples/s]Grouping texts in chunks of 1024:  63%|██████▎   | 23000/36470 [00:00<00:00, 70742.02 examples/s]Grouping texts in chunks of 1024:  85%|████████▌ | 31000/36470 [00:00<00:00, 71727.77 examples/s]                                                                                                 Grouping texts in chunks of 1024:   0%|          | 0/9118 [00:00<?, ? examples/s]07/15/2023 12:42:26 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-cf2b5c7931e653e6.arrow
+Grouping texts in chunks of 1024:  11%|█         | 1000/9118 [00:00<00:00, 9797.74 examples/s]Grouping texts in chunks of 1024:  99%|█████████▊| 9000/9118 [00:00<00:00, 47731.86 examples/s]                                                                                               [INFO|trainer.py:763] 2023-07-15 12:42:28,632 >> The following columns in the evaluation set don't have a corresponding argument in `BertForMaskedLM.forward` and have been ignored: special_tokens_mask. If special_tokens_mask are not expected by `BertForMaskedLM.forward`,  you can safely ignore this message.
+[INFO|trainer.py:3081] 2023-07-15 12:42:28,636 >> ***** Running Evaluation *****
+[INFO|trainer.py:3083] 2023-07-15 12:42:28,636 >>   Num examples = 18
+[INFO|trainer.py:3086] 2023-07-15 12:42:28,636 >>   Batch size = 4
+[WARNING|logging.py:280] 2023-07-15 12:42:28,642 >> You're using a BertTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+Traceback (most recent call last):
+  File "/home/yhuang5/mlm/transformers/examples/pytorch/language-modeling/run_mlm.py", line 1307, in <module>
+    main()
+  File "/home/yhuang5/mlm/transformers/examples/pytorch/language-modeling/run_mlm.py", line 1187, in main
+    eval_results = trainer.evaluate()
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/trainer.py", line 2934, in evaluate
+    output = eval_loop(
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/trainer.py", line 3123, in evaluation_loop
+    loss, logits, labels = self.prediction_step(model, inputs, prediction_loss_only, ignore_keys=ignore_keys)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/trainer.py", line 3337, in prediction_step
+    loss, outputs = self.compute_loss(model, inputs, return_outputs=True)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/trainer.py", line 2679, in compute_loss
+    outputs = model(**inputs)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/models/bert/modeling_bert.py", line 1358, in forward
+    outputs = self.bert(
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/models/bert/modeling_bert.py", line 1015, in forward
+    embedding_output = self.embeddings(
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/models/bert/modeling_bert.py", line 238, in forward
+    embeddings += position_embeddings
+RuntimeError: The size of tensor a (1024) must match the size of tensor b (64) at non-singleton dimension 1

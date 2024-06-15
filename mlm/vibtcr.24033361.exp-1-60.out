@@ -1,0 +1,311 @@
+07/14/2023 08:18:46 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+07/14/2023 08:18:46 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'fsdp_min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=results_protbert/runs/Jul14_08-18-46_exp-1-60,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=3.0,
+optim=adamw_hf,
+optim_args=None,
+output_dir=results_protbert,
+overwrite_output_dir=True,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=results_protbert,
+save_on_each_node=False,
+save_safetensors=False,
+save_steps=500,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+xpu_backend=None,
+)
+07/14/2023 08:18:47 - INFO - datasets.builder - Using custom data configuration default-17f3948ee5158af1
+07/14/2023 08:18:47 - INFO - datasets.info - Loading Dataset Infos from /home/yhuang5/mlm/.env/lib64/python3.9/site-packages/datasets/packaged_modules/csv
+07/14/2023 08:18:47 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+07/14/2023 08:18:47 - INFO - datasets.info - Loading Dataset info from /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d
+07/14/2023 08:18:47 - WARNING - datasets.builder - Found cached dataset csv (/home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d)
+07/14/2023 08:18:47 - INFO - datasets.info - Loading Dataset info from /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 152.38it/s]
+Downloading (…)lve/main/config.json:   0%|          | 0.00/361 [00:00<?, ?B/s]Downloading (…)lve/main/config.json: 100%|██████████| 361/361 [00:00<00:00, 123kB/s]
+[INFO|configuration_utils.py:712] 2023-07-14 08:18:47,450 >> loading configuration file config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/config.json
+[INFO|configuration_utils.py:768] 2023-07-14 08:18:47,451 >> Model config BertConfig {
+  "_name_or_path": "Rostlab/prot_bert",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.0,
+  "classifier_dropout": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.0,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 40000,
+  "model_type": "bert",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 30,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.31.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30
+}
+
+Downloading (…)okenizer_config.json:   0%|          | 0.00/86.0 [00:00<?, ?B/s]Downloading (…)okenizer_config.json: 100%|██████████| 86.0/86.0 [00:00<00:00, 30.6kB/s]
+[INFO|configuration_utils.py:712] 2023-07-14 08:18:47,731 >> loading configuration file config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/config.json
+[INFO|configuration_utils.py:768] 2023-07-14 08:18:47,732 >> Model config BertConfig {
+  "_name_or_path": "Rostlab/prot_bert",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.0,
+  "classifier_dropout": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.0,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 40000,
+  "model_type": "bert",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 30,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.31.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30
+}
+
+Downloading (…)solve/main/vocab.txt:   0%|          | 0.00/81.0 [00:00<?, ?B/s]Downloading (…)solve/main/vocab.txt: 100%|██████████| 81.0/81.0 [00:00<00:00, 51.4kB/s]
+Downloading (…)cial_tokens_map.json:   0%|          | 0.00/112 [00:00<?, ?B/s]Downloading (…)cial_tokens_map.json: 100%|██████████| 112/112 [00:00<00:00, 70.7kB/s]
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 08:18:48,413 >> loading file vocab.txt from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/vocab.txt
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 08:18:48,413 >> loading file tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 08:18:48,413 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 08:18:48,413 >> loading file special_tokens_map.json from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/special_tokens_map.json
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 08:18:48,413 >> loading file tokenizer_config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/tokenizer_config.json
+[INFO|configuration_utils.py:712] 2023-07-14 08:18:48,414 >> loading configuration file config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/config.json
+[INFO|configuration_utils.py:768] 2023-07-14 08:18:48,414 >> Model config BertConfig {
+  "_name_or_path": "Rostlab/prot_bert",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.0,
+  "classifier_dropout": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.0,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 40000,
+  "model_type": "bert",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 30,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.31.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30
+}
+
+[INFO|configuration_utils.py:712] 2023-07-14 08:18:48,416 >> loading configuration file config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/config.json
+[INFO|configuration_utils.py:768] 2023-07-14 08:18:48,416 >> Model config BertConfig {
+  "_name_or_path": "Rostlab/prot_bert",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.0,
+  "classifier_dropout": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.0,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 40000,
+  "model_type": "bert",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 30,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.31.0.dev0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30
+}
+
+Downloading pytorch_model.bin:   0%|          | 0.00/1.68G [00:00<?, ?B/s]Downloading pytorch_model.bin:   1%|          | 10.5M/1.68G [00:00<01:36, 17.4MB/s]Downloading pytorch_model.bin:   1%|          | 21.0M/1.68G [00:00<00:55, 30.2MB/s]Downloading pytorch_model.bin:   2%|▏         | 31.5M/1.68G [00:00<00:40, 40.5MB/s]Downloading pytorch_model.bin:   2%|▏         | 41.9M/1.68G [00:01<00:38, 42.9MB/s]Downloading pytorch_model.bin:   3%|▎         | 52.4M/1.68G [00:01<00:45, 36.3MB/s]Downloading pytorch_model.bin:   4%|▎         | 62.9M/1.68G [00:01<00:50, 31.9MB/s]Downloading pytorch_model.bin:   4%|▍         | 73.4M/1.68G [00:02<00:44, 36.0MB/s]Downloading pytorch_model.bin:   5%|▍         | 83.9M/1.68G [00:02<00:50, 31.5MB/s]Downloading pytorch_model.bin:   6%|▌         | 94.4M/1.68G [00:02<00:49, 31.9MB/s]Downloading pytorch_model.bin:   6%|▌         | 105M/1.68G [00:03<00:47, 33.2MB/s] Downloading pytorch_model.bin:   7%|▋         | 115M/1.68G [00:03<00:40, 38.7MB/s]Downloading pytorch_model.bin:   7%|▋         | 126M/1.68G [00:03<00:39, 39.9MB/s]Downloading pytorch_model.bin:   8%|▊         | 136M/1.68G [00:03<00:36, 42.0MB/s]Downloading pytorch_model.bin:   9%|▊         | 147M/1.68G [00:04<00:43, 35.4MB/s]Downloading pytorch_model.bin:   9%|▉         | 157M/1.68G [00:04<00:40, 37.9MB/s]Downloading pytorch_model.bin:  10%|▉         | 168M/1.68G [00:04<00:45, 33.3MB/s]Downloading pytorch_model.bin:  11%|█         | 178M/1.68G [00:05<00:45, 32.8MB/s]Downloading pytorch_model.bin:  11%|█         | 189M/1.68G [00:05<00:44, 33.4MB/s]Downloading pytorch_model.bin:  12%|█▏        | 199M/1.68G [00:05<00:40, 36.4MB/s]Downloading pytorch_model.bin:  12%|█▏        | 210M/1.68G [00:06<00:48, 30.1MB/s]Downloading pytorch_model.bin:  13%|█▎        | 220M/1.68G [00:06<00:45, 31.8MB/s]Downloading pytorch_model.bin:  14%|█▎        | 231M/1.68G [00:06<00:45, 31.9MB/s]Downloading pytorch_model.bin:  14%|█▍        | 241M/1.68G [00:06<00:37, 38.6MB/s]Downloading pytorch_model.bin:  15%|█▍        | 252M/1.68G [00:07<00:36, 39.3MB/s]Downloading pytorch_model.bin:  16%|█▌        | 262M/1.68G [00:07<00:32, 43.3MB/s]Downloading pytorch_model.bin:  16%|█▌        | 273M/1.68G [00:07<00:34, 41.1MB/s]Downloading pytorch_model.bin:  17%|█▋        | 283M/1.68G [00:07<00:32, 42.5MB/s]Downloading pytorch_model.bin:  17%|█▋        | 294M/1.68G [00:08<00:38, 36.4MB/s]Downloading pytorch_model.bin:  18%|█▊        | 304M/1.68G [00:08<00:36, 38.2MB/s]Downloading pytorch_model.bin:  19%|█▊        | 315M/1.68G [00:09<00:44, 30.5MB/s]Downloading pytorch_model.bin:  19%|█▉        | 325M/1.68G [00:09<00:40, 33.8MB/s]Downloading pytorch_model.bin:  20%|█▉        | 336M/1.68G [00:09<00:53, 25.3MB/s]Downloading pytorch_model.bin:  21%|██        | 346M/1.68G [00:10<00:43, 30.4MB/s]Downloading pytorch_model.bin:  21%|██        | 357M/1.68G [00:10<00:43, 30.6MB/s]Downloading pytorch_model.bin:  22%|██▏       | 367M/1.68G [00:10<00:37, 35.4MB/s]Downloading pytorch_model.bin:  22%|██▏       | 377M/1.68G [00:11<00:41, 31.3MB/s]Downloading pytorch_model.bin:  23%|██▎       | 388M/1.68G [00:11<00:35, 36.9MB/s]Downloading pytorch_model.bin:  24%|██▎       | 398M/1.68G [00:11<00:33, 38.1MB/s]Downloading pytorch_model.bin:  24%|██▍       | 409M/1.68G [00:11<00:34, 36.8MB/s]Downloading pytorch_model.bin:  25%|██▍       | 419M/1.68G [00:12<00:43, 28.8MB/s]Downloading pytorch_model.bin:  26%|██▌       | 430M/1.68G [00:12<00:37, 33.6MB/s]Downloading pytorch_model.bin:  26%|██▌       | 440M/1.68G [00:12<00:33, 36.8MB/s]Downloading pytorch_model.bin:  27%|██▋       | 451M/1.68G [00:13<00:33, 36.9MB/s]Downloading pytorch_model.bin:  27%|██▋       | 461M/1.68G [00:13<00:35, 34.3MB/s]Downloading pytorch_model.bin:  28%|██▊       | 472M/1.68G [00:13<00:33, 35.8MB/s]Downloading pytorch_model.bin:  29%|██▊       | 482M/1.68G [00:13<00:31, 38.3MB/s]Downloading pytorch_model.bin:  29%|██▉       | 493M/1.68G [00:14<00:27, 44.1MB/s]Downloading pytorch_model.bin:  30%|██▉       | 503M/1.68G [00:14<00:34, 34.4MB/s]Downloading pytorch_model.bin:  31%|███       | 514M/1.68G [00:14<00:35, 33.4MB/s]Downloading pytorch_model.bin:  31%|███       | 524M/1.68G [00:15<00:31, 37.3MB/s]Downloading pytorch_model.bin:  32%|███▏      | 535M/1.68G [00:15<00:32, 35.6MB/s]Downloading pytorch_model.bin:  32%|███▏      | 545M/1.68G [00:15<00:32, 34.7MB/s]Downloading pytorch_model.bin:  33%|███▎      | 556M/1.68G [00:15<00:31, 36.2MB/s]Downloading pytorch_model.bin:  34%|███▎      | 566M/1.68G [00:16<00:28, 39.5MB/s]Downloading pytorch_model.bin:  34%|███▍      | 577M/1.68G [00:16<00:26, 42.3MB/s]Downloading pytorch_model.bin:  35%|███▍      | 587M/1.68G [00:16<00:31, 35.2MB/s]Downloading pytorch_model.bin:  35%|███▌      | 598M/1.68G [00:16<00:26, 40.8MB/s]Downloading pytorch_model.bin:  36%|███▌      | 608M/1.68G [00:17<00:25, 41.8MB/s]Downloading pytorch_model.bin:  37%|███▋      | 619M/1.68G [00:17<00:25, 42.0MB/s]Downloading pytorch_model.bin:  37%|███▋      | 629M/1.68G [00:18<00:38, 27.5MB/s]Downloading pytorch_model.bin:  38%|███▊      | 640M/1.68G [00:18<00:37, 27.8MB/s]Downloading pytorch_model.bin:  39%|███▊      | 650M/1.68G [00:18<00:32, 31.5MB/s]Downloading pytorch_model.bin:  39%|███▉      | 661M/1.68G [00:19<00:32, 31.7MB/s]Downloading pytorch_model.bin:  40%|███▉      | 671M/1.68G [00:19<00:40, 25.1MB/s]Downloading pytorch_model.bin:  40%|████      | 682M/1.68G [00:19<00:36, 27.7MB/s]Downloading pytorch_model.bin:  41%|████      | 692M/1.68G [00:20<00:32, 30.2MB/s]Downloading pytorch_model.bin:  42%|████▏     | 703M/1.68G [00:20<00:34, 28.1MB/s]Downloading pytorch_model.bin:  42%|████▏     | 713M/1.68G [00:21<00:35, 27.6MB/s]Downloading pytorch_model.bin:  43%|████▎     | 724M/1.68G [00:21<00:31, 30.5MB/s]Downloading pytorch_model.bin:  44%|████▎     | 734M/1.68G [00:21<00:32, 29.3MB/s]Downloading pytorch_model.bin:  44%|████▍     | 744M/1.68G [00:22<00:31, 29.8MB/s]Downloading pytorch_model.bin:  45%|████▍     | 755M/1.68G [00:22<00:31, 29.2MB/s]Downloading pytorch_model.bin:  45%|████▌     | 765M/1.68G [00:22<00:29, 30.7MB/s]Downloading pytorch_model.bin:  46%|████▌     | 776M/1.68G [00:23<00:31, 28.9MB/s]Downloading pytorch_model.bin:  47%|████▋     | 786M/1.68G [00:23<00:26, 33.6MB/s]Downloading pytorch_model.bin:  47%|████▋     | 797M/1.68G [00:23<00:27, 32.3MB/s]Downloading pytorch_model.bin:  48%|████▊     | 807M/1.68G [00:24<00:28, 30.6MB/s]Downloading pytorch_model.bin:  49%|████▊     | 818M/1.68G [00:24<00:26, 32.6MB/s]Downloading pytorch_model.bin:  49%|████▉     | 828M/1.68G [00:24<00:26, 32.8MB/s]Downloading pytorch_model.bin:  50%|████▉     | 839M/1.68G [00:25<00:28, 30.0MB/s]Downloading pytorch_model.bin:  50%|█████     | 849M/1.68G [00:25<00:28, 29.3MB/s]Downloading pytorch_model.bin:  51%|█████     | 860M/1.68G [00:25<00:29, 27.9MB/s]Downloading pytorch_model.bin:  52%|█████▏    | 870M/1.68G [00:26<00:29, 28.0MB/s]Downloading pytorch_model.bin:  52%|█████▏    | 881M/1.68G [00:26<00:27, 29.3MB/s]Downloading pytorch_model.bin:  53%|█████▎    | 891M/1.68G [00:27<00:30, 26.0MB/s]Downloading pytorch_model.bin:  54%|█████▎    | 902M/1.68G [00:27<00:28, 27.8MB/s]Downloading pytorch_model.bin:  54%|█████▍    | 912M/1.68G [00:27<00:27, 27.9MB/s]Downloading pytorch_model.bin:  55%|█████▍    | 923M/1.68G [00:28<00:25, 29.3MB/s]Downloading pytorch_model.bin:  55%|█████▌    | 933M/1.68G [00:28<00:25, 28.9MB/s]Downloading pytorch_model.bin:  56%|█████▌    | 944M/1.68G [00:28<00:24, 30.1MB/s]Downloading pytorch_model.bin:  57%|█████▋    | 954M/1.68G [00:29<00:24, 29.6MB/s]Downloading pytorch_model.bin:  57%|█████▋    | 965M/1.68G [00:29<00:23, 30.5MB/s]Downloading pytorch_model.bin:  58%|█████▊    | 975M/1.68G [00:29<00:22, 31.4MB/s]Downloading pytorch_model.bin:  59%|█████▊    | 986M/1.68G [00:30<00:22, 30.5MB/s]Downloading pytorch_model.bin:  59%|█████▉    | 996M/1.68G [00:30<00:22, 31.1MB/s]Downloading pytorch_model.bin:  60%|█████▉    | 1.01G/1.68G [00:30<00:21, 31.8MB/s]Downloading pytorch_model.bin:  60%|██████    | 1.02G/1.68G [00:31<00:21, 30.8MB/s]Downloading pytorch_model.bin:  61%|██████    | 1.03G/1.68G [00:31<00:21, 31.2MB/s]Downloading pytorch_model.bin:  62%|██████▏   | 1.04G/1.68G [00:31<00:20, 31.6MB/s]Downloading pytorch_model.bin:  62%|██████▏   | 1.05G/1.68G [00:32<00:20, 31.4MB/s]Downloading pytorch_model.bin:  63%|██████▎   | 1.06G/1.68G [00:32<00:20, 31.1MB/s]Downloading pytorch_model.bin:  64%|██████▎   | 1.07G/1.68G [00:32<00:19, 31.6MB/s]Downloading pytorch_model.bin:  64%|██████▍   | 1.08G/1.68G [00:33<00:18, 32.1MB/s]Downloading pytorch_model.bin:  65%|██████▍   | 1.09G/1.68G [00:33<00:19, 30.8MB/s]Downloading pytorch_model.bin:  65%|██████▌   | 1.10G/1.68G [00:33<00:18, 31.5MB/s]Downloading pytorch_model.bin:  66%|██████▌   | 1.11G/1.68G [00:34<00:17, 32.1MB/s]Downloading pytorch_model.bin:  67%|██████▋   | 1.12G/1.68G [00:34<00:19, 29.4MB/s]Downloading pytorch_model.bin:  67%|██████▋   | 1.13G/1.68G [00:34<00:18, 30.5MB/s]Downloading pytorch_model.bin:  68%|██████▊   | 1.14G/1.68G [00:35<00:17, 31.2MB/s]Downloading pytorch_model.bin:  68%|██████▊   | 1.15G/1.68G [00:35<00:18, 28.0MB/s]Downloading pytorch_model.bin:  69%|██████▉   | 1.16G/1.68G [00:35<00:17, 29.4MB/s]Downloading pytorch_model.bin:  70%|██████▉   | 1.17G/1.68G [00:36<00:16, 30.5MB/s]Downloading pytorch_model.bin:  70%|███████   | 1.18G/1.68G [00:36<00:16, 31.1MB/s]Downloading pytorch_model.bin:  71%|███████   | 1.20G/1.68G [00:36<00:16, 30.4MB/s]Downloading pytorch_model.bin:  72%|███████▏  | 1.21G/1.68G [00:37<00:15, 31.2MB/s]Downloading pytorch_model.bin:  72%|███████▏  | 1.22G/1.68G [00:37<00:14, 31.6MB/s]Downloading pytorch_model.bin:  73%|███████▎  | 1.23G/1.68G [00:37<00:14, 31.9MB/s]Downloading pytorch_model.bin:  73%|███████▎  | 1.24G/1.68G [00:38<00:13, 32.5MB/s]Downloading pytorch_model.bin:  74%|███████▍  | 1.25G/1.68G [00:38<00:13, 32.8MB/s]Downloading pytorch_model.bin:  75%|███████▍  | 1.26G/1.68G [00:38<00:13, 32.2MB/s]Downloading pytorch_model.bin:  75%|███████▌  | 1.27G/1.68G [00:39<00:12, 32.2MB/s]Downloading pytorch_model.bin:  76%|███████▌  | 1.28G/1.68G [00:39<00:12, 32.6MB/s]Downloading pytorch_model.bin:  77%|███████▋  | 1.29G/1.68G [00:39<00:11, 33.2MB/s]Downloading pytorch_model.bin:  77%|███████▋  | 1.30G/1.68G [00:40<00:11, 33.5MB/s]Downloading pytorch_model.bin:  78%|███████▊  | 1.31G/1.68G [00:40<00:10, 34.3MB/s]Downloading pytorch_model.bin:  78%|███████▊  | 1.32G/1.68G [00:40<00:10, 34.2MB/s]Downloading pytorch_model.bin:  79%|███████▉  | 1.33G/1.68G [00:40<00:10, 34.1MB/s]Downloading pytorch_model.bin:  80%|███████▉  | 1.34G/1.68G [00:41<00:09, 34.5MB/s]Downloading pytorch_model.bin:  80%|████████  | 1.35G/1.68G [00:41<00:09, 35.6MB/s]Downloading pytorch_model.bin:  81%|████████  | 1.36G/1.68G [00:41<00:09, 34.7MB/s]Downloading pytorch_model.bin:  82%|████████▏ | 1.37G/1.68G [00:42<00:08, 36.4MB/s]Downloading pytorch_model.bin:  82%|████████▏ | 1.38G/1.68G [00:42<00:08, 35.6MB/s]Downloading pytorch_model.bin:  83%|████████▎ | 1.39G/1.68G [00:42<00:07, 37.2MB/s]Downloading pytorch_model.bin:  83%|████████▎ | 1.41G/1.68G [00:42<00:07, 37.5MB/s]Downloading pytorch_model.bin:  84%|████████▍ | 1.42G/1.68G [00:43<00:07, 38.3MB/s]Downloading pytorch_model.bin:  85%|████████▍ | 1.43G/1.68G [00:43<00:07, 36.8MB/s]Downloading pytorch_model.bin:  85%|████████▌ | 1.44G/1.68G [00:43<00:06, 38.1MB/s]Downloading pytorch_model.bin:  86%|████████▌ | 1.45G/1.68G [00:44<00:06, 37.7MB/s]Downloading pytorch_model.bin:  87%|████████▋ | 1.46G/1.68G [00:44<00:06, 35.2MB/s]Downloading pytorch_model.bin:  87%|████████▋ | 1.47G/1.68G [00:44<00:06, 32.4MB/s]Downloading pytorch_model.bin:  88%|████████▊ | 1.48G/1.68G [00:45<00:05, 34.8MB/s]Downloading pytorch_model.bin:  88%|████████▊ | 1.49G/1.68G [00:45<00:05, 36.2MB/s]Downloading pytorch_model.bin:  89%|████████▉ | 1.50G/1.68G [00:45<00:05, 32.3MB/s]Downloading pytorch_model.bin:  90%|████████▉ | 1.51G/1.68G [00:45<00:05, 33.7MB/s]Downloading pytorch_model.bin:  90%|█████████ | 1.52G/1.68G [00:46<00:05, 31.4MB/s]Downloading pytorch_model.bin:  91%|█████████ | 1.53G/1.68G [00:46<00:04, 32.5MB/s]Downloading pytorch_model.bin:  92%|█████████▏| 1.54G/1.68G [00:46<00:04, 32.3MB/s]Downloading pytorch_model.bin:  92%|█████████▏| 1.55G/1.68G [00:47<00:04, 31.6MB/s]Downloading pytorch_model.bin:  93%|█████████▎| 1.56G/1.68G [00:47<00:03, 36.1MB/s]Downloading pytorch_model.bin:  93%|█████████▎| 1.57G/1.68G [00:47<00:03, 34.4MB/s]Downloading pytorch_model.bin:  94%|█████████▍| 1.58G/1.68G [00:48<00:02, 36.2MB/s]Downloading pytorch_model.bin:  95%|█████████▍| 1.59G/1.68G [00:48<00:03, 29.7MB/s]Downloading pytorch_model.bin:  95%|█████████▌| 1.60G/1.68G [00:48<00:02, 31.9MB/s]Downloading pytorch_model.bin:  96%|█████████▌| 1.61G/1.68G [00:49<00:02, 27.4MB/s]Downloading pytorch_model.bin:  97%|█████████▋| 1.63G/1.68G [00:49<00:02, 28.5MB/s]Downloading pytorch_model.bin:  97%|█████████▋| 1.64G/1.68G [00:50<00:02, 23.3MB/s]Downloading pytorch_model.bin:  98%|█████████▊| 1.65G/1.68G [00:50<00:01, 27.8MB/s]Downloading pytorch_model.bin:  98%|█████████▊| 1.66G/1.68G [00:50<00:00, 30.8MB/s]Downloading pytorch_model.bin:  99%|█████████▉| 1.67G/1.68G [00:51<00:00, 32.9MB/s]Downloading pytorch_model.bin: 100%|█████████▉| 1.68G/1.68G [00:51<00:00, 25.7MB/s]Downloading pytorch_model.bin: 100%|██████████| 1.68G/1.68G [00:51<00:00, 27.3MB/s]Downloading pytorch_model.bin: 100%|██████████| 1.68G/1.68G [00:51<00:00, 32.4MB/s]
+[INFO|modeling_utils.py:2603] 2023-07-14 08:19:42,423 >> loading weights file pytorch_model.bin from cache at /home/yhuang5/.cache/huggingface/hub/models--Rostlab--prot_bert/snapshots/3d05bf06e79014892defacad82e0efd06e977ff6/pytorch_model.bin
+[INFO|configuration_utils.py:599] 2023-07-14 08:19:44,843 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "pad_token_id": 0,
+  "transformers_version": "4.31.0.dev0"
+}
+
+[WARNING|modeling_utils.py:3319] 2023-07-14 08:19:48,467 >> Some weights of the model checkpoint at Rostlab/prot_bert were not used when initializing BertForMaskedLM: ['bert.pooler.dense.bias', 'cls.seq_relationship.weight', 'bert.pooler.dense.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+[INFO|modeling_utils.py:3337] 2023-07-14 08:19:48,467 >> All the weights of BertForMaskedLM were initialized from the model checkpoint at Rostlab/prot_bert.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertForMaskedLM for predictions without further training.
+[INFO|modeling_utils.py:2949] 2023-07-14 08:19:48,568 >> Generation config file not found, using a generation config created from the model config.
+07/14/2023 08:19:48 - WARNING - __main__ - The chosen tokenizer supports a `model_max_length` that is longer than the default `block_size` value of 1024. If you would like to use a longer `block_size` up to `tokenizer.model_max_length` you can override this default with `--block_size xxx`.
+Running tokenizer on every text in dataset:   0%|          | 0/36470 [00:00<?, ? examples/s]07/14/2023 08:19:48 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-ca25af36f13db854.arrow
+Running tokenizer on every text in dataset:  11%|█         | 4000/36470 [00:00<00:00, 34880.66 examples/s]Running tokenizer on every text in dataset:  25%|██▍       | 9000/36470 [00:00<00:01, 26162.45 examples/s]Running tokenizer on every text in dataset:  41%|████      | 15000/36470 [00:00<00:00, 36294.97 examples/s]Running tokenizer on every text in dataset:  58%|█████▊    | 21000/36470 [00:00<00:00, 33210.46 examples/s]Running tokenizer on every text in dataset:  74%|███████▍  | 27000/36470 [00:00<00:00, 39269.88 examples/s]Running tokenizer on every text in dataset:  90%|█████████ | 33000/36470 [00:00<00:00, 34622.18 examples/s]                                                                                                           Running tokenizer on every text in dataset:   0%|          | 0/9118 [00:00<?, ? examples/s]07/14/2023 08:19:49 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-97421f91bfb1efc5.arrow
+Running tokenizer on every text in dataset:  33%|███▎      | 3000/9118 [00:00<00:00, 17260.79 examples/s]Running tokenizer on every text in dataset:  99%|█████████▊| 9000/9118 [00:00<00:00, 35269.68 examples/s]                                                                                                         Grouping texts in chunks of 1024:   0%|          | 0/36470 [00:00<?, ? examples/s]07/14/2023 08:19:50 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-48199d8a156c896d.arrow
+Grouping texts in chunks of 1024:  16%|█▋        | 6000/36470 [00:00<00:00, 55016.65 examples/s]Grouping texts in chunks of 1024:  44%|████▍     | 16000/36470 [00:00<00:00, 74503.53 examples/s]Grouping texts in chunks of 1024:  71%|███████▏  | 26000/36470 [00:00<00:00, 80125.69 examples/s]Grouping texts in chunks of 1024:  99%|█████████▊| 36000/36470 [00:00<00:00, 82708.23 examples/s]                                                                                                 Grouping texts in chunks of 1024:   0%|          | 0/9118 [00:00<?, ? examples/s]07/14/2023 08:19:50 - INFO - datasets.arrow_dataset - Caching processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-1f2d332b6f30328f.arrow
+Grouping texts in chunks of 1024:  44%|████▍     | 4000/9118 [00:00<00:00, 23919.24 examples/s]                                                                                               [INFO|trainer.py:763] 2023-07-14 08:19:53,138 >> The following columns in the evaluation set don't have a corresponding argument in `BertForMaskedLM.forward` and have been ignored: special_tokens_mask. If special_tokens_mask are not expected by `BertForMaskedLM.forward`,  you can safely ignore this message.
+[INFO|trainer.py:3081] 2023-07-14 08:19:53,145 >> ***** Running Evaluation *****
+[INFO|trainer.py:3083] 2023-07-14 08:19:53,145 >>   Num examples = 18
+[INFO|trainer.py:3086] 2023-07-14 08:19:53,145 >>   Batch size = 8
+[WARNING|logging.py:280] 2023-07-14 08:19:53,156 >> You're using a BertTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+  0%|          | 0/3 [00:00<?, ?it/s] 67%|██████▋   | 2/3 [00:00<00:00,  2.78it/s]100%|██████████| 3/3 [00:00<00:00,  3.49it/s]/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/numpy/lib/function_base.py:520: RuntimeWarning: Mean of empty slice.
+  avg = a.mean(axis, **keepdims_kw)
+/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+100%|██████████| 3/3 [00:00<00:00,  3.17it/s]
+[INFO|trainer.py:763] 2023-07-14 08:19:55,752 >> The following columns in the training set don't have a corresponding argument in `BertForMaskedLM.forward` and have been ignored: special_tokens_mask. If special_tokens_mask are not expected by `BertForMaskedLM.forward`,  you can safely ignore this message.
+/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1686] 2023-07-14 08:19:55,768 >> ***** Running training *****
+[INFO|trainer.py:1687] 2023-07-14 08:19:55,768 >>   Num examples = 73
+[INFO|trainer.py:1688] 2023-07-14 08:19:55,768 >>   Num Epochs = 3
+[INFO|trainer.py:1689] 2023-07-14 08:19:55,768 >>   Instantaneous batch size per device = 8
+[INFO|trainer.py:1692] 2023-07-14 08:19:55,768 >>   Total train batch size (w. parallel, distributed & accumulation) = 8
+[INFO|trainer.py:1693] 2023-07-14 08:19:55,768 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:1694] 2023-07-14 08:19:55,768 >>   Total optimization steps = 30
+[INFO|trainer.py:1695] 2023-07-14 08:19:55,770 >>   Number of trainable parameters = 419,933,214
+>>> Perplexity: nan
+  0%|          | 0/30 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/yhuang5/mlm/transformers/examples/pytorch/language-modeling/run_mlm.py", line 1307, in <module>
+    main()
+  File "/home/yhuang5/mlm/transformers/examples/pytorch/language-modeling/run_mlm.py", line 1205, in main
+    train_result = trainer.train(resume_from_checkpoint=checkpoint)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/trainer.py", line 1809, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/trainer.py", line 2654, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/trainer.py", line 2679, in compute_loss
+    outputs = model(**inputs)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/models/bert/modeling_bert.py", line 1358, in forward
+    outputs = self.bert(
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/models/bert/modeling_bert.py", line 1022, in forward
+    encoder_outputs = self.encoder(
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/models/bert/modeling_bert.py", line 612, in forward
+    layer_outputs = layer_module(
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/models/bert/modeling_bert.py", line 497, in forward
+    self_attention_outputs = self.attention(
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/models/bert/modeling_bert.py", line 427, in forward
+    self_outputs = self.self(
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/models/bert/modeling_bert.py", line 349, in forward
+    attention_scores = attention_scores / math.sqrt(self.attention_head_size)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 512.00 MiB (GPU 0; 31.75 GiB total capacity; 30.30 GiB already allocated; 470.19 MiB free; 30.42 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+  0%|          | 0/30 [00:00<?, ?it/s]

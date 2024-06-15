@@ -1,0 +1,210 @@
+07/14/2023 07:52:11 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+07/14/2023 07:52:11 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'fsdp_min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=test-mlm/runs/Jul14_07-52-11_exp-4-58,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=steps,
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=3.0,
+optim=adamw_hf,
+optim_args=None,
+output_dir=test-mlm,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=test-mlm,
+save_on_each_node=False,
+save_safetensors=False,
+save_steps=500,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+xpu_backend=None,
+)
+07/14/2023 07:52:11 - INFO - datasets.builder - Using custom data configuration default-17f3948ee5158af1
+07/14/2023 07:52:11 - INFO - datasets.info - Loading Dataset Infos from /home/yhuang5/mlm/.env/lib64/python3.9/site-packages/datasets/packaged_modules/csv
+07/14/2023 07:52:11 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+07/14/2023 07:52:11 - INFO - datasets.info - Loading Dataset info from /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d
+07/14/2023 07:52:11 - WARNING - datasets.builder - Found cached dataset csv (/home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d)
+07/14/2023 07:52:11 - INFO - datasets.info - Loading Dataset info from /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 886.37it/s]
+[INFO|configuration_utils.py:712] 2023-07-14 07:52:11,669 >> loading configuration file config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--facebook--esm2_t12_35M_UR50D/snapshots/6fbf070e65b0b7291e7bbcd451118c216cff79d8/config.json
+[INFO|configuration_utils.py:768] 2023-07-14 07:52:11,670 >> Model config EsmConfig {
+  "_name_or_path": "facebook/esm2_t12_35M_UR50D",
+  "architectures": [
+    "EsmForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.0,
+  "classifier_dropout": null,
+  "emb_layer_norm_before": false,
+  "esmfold_config": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.0,
+  "hidden_size": 480,
+  "initializer_range": 0.02,
+  "intermediate_size": 1920,
+  "is_folding_model": false,
+  "layer_norm_eps": 1e-05,
+  "mask_token_id": 32,
+  "max_position_embeddings": 1026,
+  "model_type": "esm",
+  "num_attention_heads": 20,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "rotary",
+  "token_dropout": true,
+  "torch_dtype": "float32",
+  "transformers_version": "4.31.0.dev0",
+  "use_cache": true,
+  "vocab_list": null,
+  "vocab_size": 33
+}
+
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 07:52:11,754 >> loading file vocab.txt from cache at /home/yhuang5/.cache/huggingface/hub/models--facebook--esm2_t12_35M_UR50D/snapshots/6fbf070e65b0b7291e7bbcd451118c216cff79d8/vocab.txt
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 07:52:11,755 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 07:52:11,755 >> loading file special_tokens_map.json from cache at /home/yhuang5/.cache/huggingface/hub/models--facebook--esm2_t12_35M_UR50D/snapshots/6fbf070e65b0b7291e7bbcd451118c216cff79d8/special_tokens_map.json
+[INFO|tokenization_utils_base.py:1843] 2023-07-14 07:52:11,755 >> loading file tokenizer_config.json from cache at /home/yhuang5/.cache/huggingface/hub/models--facebook--esm2_t12_35M_UR50D/snapshots/6fbf070e65b0b7291e7bbcd451118c216cff79d8/tokenizer_config.json
+[INFO|modeling_utils.py:2603] 2023-07-14 07:52:11,757 >> loading weights file model.safetensors from cache at /home/yhuang5/.cache/huggingface/hub/models--facebook--esm2_t12_35M_UR50D/snapshots/6fbf070e65b0b7291e7bbcd451118c216cff79d8/model.safetensors
+[INFO|modeling_utils.py:3329] 2023-07-14 07:52:12,032 >> All model checkpoint weights were used when initializing EsmForMaskedLM.
+
+[INFO|modeling_utils.py:3337] 2023-07-14 07:52:12,032 >> All the weights of EsmForMaskedLM were initialized from the model checkpoint at facebook/esm2_t12_35M_UR50D.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use EsmForMaskedLM for predictions without further training.
+07/14/2023 07:52:12 - WARNING - datasets.arrow_dataset - Loading cached processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-20d6b735f98dc1ed.arrow
+07/14/2023 07:52:12 - WARNING - datasets.arrow_dataset - Loading cached processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-070f60446013ac4a.arrow
+07/14/2023 07:52:12 - WARNING - datasets.arrow_dataset - Loading cached processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-44c290d552aaa386.arrow
+07/14/2023 07:52:12 - WARNING - datasets.arrow_dataset - Loading cached processed dataset at /home/yhuang5/.cache/huggingface/datasets/csv/default-17f3948ee5158af1/0.0.0/eea64c71ca8b46dd3f537ed218fc9bf495d5707789152eb2764f5c78fa66d59d/cache-fd3e706e5c886aac.arrow
+[INFO|trainer.py:763] 2023-07-14 07:52:13,691 >> The following columns in the training set don't have a corresponding argument in `EsmForMaskedLM.forward` and have been ignored: special_tokens_mask. If special_tokens_mask are not expected by `EsmForMaskedLM.forward`,  you can safely ignore this message.
+/home/yhuang5/mlm/.env/lib64/python3.9/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1686] 2023-07-14 07:52:13,699 >> ***** Running training *****
+[INFO|trainer.py:1687] 2023-07-14 07:52:13,699 >>   Num examples = 510
+[INFO|trainer.py:1688] 2023-07-14 07:52:13,699 >>   Num Epochs = 3
+[INFO|trainer.py:1689] 2023-07-14 07:52:13,699 >>   Instantaneous batch size per device = 8
+[INFO|trainer.py:1692] 2023-07-14 07:52:13,699 >>   Total train batch size (w. parallel, distributed & accumulation) = 8
+[INFO|trainer.py:1693] 2023-07-14 07:52:13,699 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:1694] 2023-07-14 07:52:13,699 >>   Total optimization steps = 192
+[INFO|trainer.py:1695] 2023-07-14 07:52:13,700 >>   Number of trainable parameters = 33,993,874
+  0%|          | 0/192 [00:00<?, ?it/s]  1%|          | 1/192 [00:01<04:26,  1.39s/it]  1%|          | 2/192 [00:01<02:42,  1.17it/s]  2%|▏         | 3/192 [00:02<02:09,  1.46it/s]  2%|▏         | 4/192 [00:02<01:53,  1.65it/s]  3%|▎         | 5/192 [00:03<01:44,  1.79it/s]  3%|▎         | 6/192 [00:03<01:39,  1.87it/s]  4%|▎         | 7/192 [00:04<01:35,  1.93it/s]  4%|▍         | 8/192 [00:04<01:32,  1.98it/s]  5%|▍         | 9/192 [00:05<01:31,  2.01it/s]  5%|▌         | 10/192 [00:05<01:29,  2.03it/s]  6%|▌         | 11/192 [00:06<01:28,  2.04it/s]  6%|▋         | 12/192 [00:06<01:27,  2.05it/s]  7%|▋         | 13/192 [00:07<01:26,  2.06it/s]  7%|▋         | 14/192 [00:07<01:26,  2.07it/s]  8%|▊         | 15/192 [00:08<01:25,  2.07it/s]  8%|▊         | 16/192 [00:08<01:24,  2.07it/s]  9%|▉         | 17/192 [00:09<01:24,  2.07it/s]  9%|▉         | 18/192 [00:09<01:23,  2.08it/s] 10%|▉         | 19/192 [00:10<01:23,  2.08it/s] 10%|█         | 20/192 [00:10<01:22,  2.08it/s] 11%|█         | 21/192 [00:11<01:22,  2.08it/s] 11%|█▏        | 22/192 [00:11<01:21,  2.08it/s] 12%|█▏        | 23/192 [00:11<01:21,  2.08it/s] 12%|█▎        | 24/192 [00:12<01:20,  2.08it/s] 13%|█▎        | 25/192 [00:12<01:20,  2.08it/s] 14%|█▎        | 26/192 [00:13<01:19,  2.08it/s] 14%|█▍        | 27/192 [00:13<01:19,  2.08it/s] 15%|█▍        | 28/192 [00:14<01:18,  2.08it/s] 15%|█▌        | 29/192 [00:14<01:18,  2.08it/s] 16%|█▌        | 30/192 [00:15<01:17,  2.08it/s] 16%|█▌        | 31/192 [00:15<01:17,  2.08it/s] 17%|█▋        | 32/192 [00:16<01:16,  2.08it/s] 17%|█▋        | 33/192 [00:16<01:16,  2.08it/s] 18%|█▊        | 34/192 [00:17<01:16,  2.08it/s] 18%|█▊        | 35/192 [00:17<01:15,  2.08it/s] 19%|█▉        | 36/192 [00:18<01:15,  2.08it/s] 19%|█▉        | 37/192 [00:18<01:14,  2.07it/s] 20%|█▉        | 38/192 [00:19<01:14,  2.07it/s] 20%|██        | 39/192 [00:19<01:13,  2.07it/s] 21%|██        | 40/192 [00:20<01:13,  2.07it/s] 21%|██▏       | 41/192 [00:20<01:12,  2.07it/s] 22%|██▏       | 42/192 [00:21<01:12,  2.07it/s] 22%|██▏       | 43/192 [00:21<01:11,  2.08it/s] 23%|██▎       | 44/192 [00:22<01:11,  2.08it/s] 23%|██▎       | 45/192 [00:22<01:10,  2.08it/s] 24%|██▍       | 46/192 [00:23<01:10,  2.08it/s] 24%|██▍       | 47/192 [00:23<01:09,  2.08it/s] 25%|██▌       | 48/192 [00:24<01:09,  2.08it/s] 26%|██▌       | 49/192 [00:24<01:08,  2.08it/s] 26%|██▌       | 50/192 [00:24<01:08,  2.07it/s] 27%|██▋       | 51/192 [00:25<01:08,  2.07it/s] 27%|██▋       | 52/192 [00:25<01:07,  2.07it/s] 28%|██▊       | 53/192 [00:26<01:07,  2.07it/s] 28%|██▊       | 54/192 [00:26<01:06,  2.08it/s] 29%|██▊       | 55/192 [00:27<01:06,  2.08it/s] 29%|██▉       | 56/192 [00:27<01:05,  2.08it/s] 30%|██▉       | 57/192 [00:28<01:04,  2.08it/s] 30%|███       | 58/192 [00:28<01:04,  2.07it/s] 31%|███       | 59/192 [00:29<01:04,  2.08it/s] 31%|███▏      | 60/192 [00:29<01:03,  2.08it/s] 32%|███▏      | 61/192 [00:30<01:03,  2.08it/s] 32%|███▏      | 62/192 [00:30<01:02,  2.08it/s] 33%|███▎      | 63/192 [00:31<01:01,  2.10it/s] 33%|███▎      | 64/192 [00:31<00:55,  2.32it/s] 34%|███▍      | 65/192 [00:32<00:59,  2.15it/s] 34%|███▍      | 66/192 [00:32<00:59,  2.12it/s] 35%|███▍      | 67/192 [00:33<00:59,  2.11it/s] 35%|███▌      | 68/192 [00:33<00:59,  2.10it/s] 36%|███▌      | 69/192 [00:34<00:58,  2.09it/s] 36%|███▋      | 70/192 [00:34<00:58,  2.09it/s] 37%|███▋      | 71/192 [00:34<00:58,  2.08it/s] 38%|███▊      | 72/192 [00:35<00:57,  2.08it/s] 38%|███▊      | 73/192 [00:35<00:57,  2.08it/s] 39%|███▊      | 74/192 [00:36<00:56,  2.07it/s] 39%|███▉      | 75/192 [00:36<00:56,  2.07it/s] 40%|███▉      | 76/192 [00:37<00:55,  2.07it/s] 40%|████      | 77/192 [00:37<00:55,  2.07it/s] 41%|████      | 78/192 [00:38<00:55,  2.07it/s] 41%|████      | 79/192 [00:38<00:54,  2.07it/s] 42%|████▏     | 80/192 [00:39<00:53,  2.07it/s] 42%|████▏     | 81/192 [00:39<00:53,  2.07it/s] 43%|████▎     | 82/192 [00:40<00:53,  2.07it/s] 43%|████▎     | 83/192 [00:40<00:52,  2.07it/s] 44%|████▍     | 84/192 [00:41<00:52,  2.07it/s] 44%|████▍     | 85/192 [00:41<00:51,  2.07it/s] 45%|████▍     | 86/192 [00:42<00:51,  2.07it/s] 45%|████▌     | 87/192 [00:42<00:50,  2.07it/s] 46%|████▌     | 88/192 [00:43<00:50,  2.07it/s] 46%|████▋     | 89/192 [00:43<00:49,  2.07it/s] 47%|████▋     | 90/192 [00:44<00:49,  2.07it/s] 47%|████▋     | 91/192 [00:44<00:48,  2.07it/s] 48%|████▊     | 92/192 [00:45<00:48,  2.07it/s] 48%|████▊     | 93/192 [00:45<00:47,  2.07it/s] 49%|████▉     | 94/192 [00:46<00:47,  2.07it/s] 49%|████▉     | 95/192 [00:46<00:46,  2.07it/s] 50%|█████     | 96/192 [00:47<00:46,  2.07it/s] 51%|█████     | 97/192 [00:47<00:45,  2.07it/s] 51%|█████     | 98/192 [00:48<00:45,  2.07it/s] 52%|█████▏    | 99/192 [00:48<00:44,  2.07it/s] 52%|█████▏    | 100/192 [00:48<00:44,  2.07it/s] 53%|█████▎    | 101/192 [00:49<00:43,  2.07it/s] 53%|█████▎    | 102/192 [00:49<00:43,  2.07it/s] 54%|█████▎    | 103/192 [00:50<00:42,  2.07it/s] 54%|█████▍    | 104/192 [00:50<00:42,  2.08it/s] 55%|█████▍    | 105/192 [00:51<00:41,  2.08it/s] 55%|█████▌    | 106/192 [00:51<00:41,  2.08it/s] 56%|█████▌    | 107/192 [00:52<00:40,  2.08it/s] 56%|█████▋    | 108/192 [00:52<00:40,  2.07it/s] 57%|█████▋    | 109/192 [00:53<00:40,  2.07it/s] 57%|█████▋    | 110/192 [00:53<00:39,  2.07it/s] 58%|█████▊    | 111/192 [00:54<00:39,  2.07it/s] 58%|█████▊    | 112/192 [00:54<00:38,  2.07it/s] 59%|█████▉    | 113/192 [00:55<00:38,  2.07it/s] 59%|█████▉    | 114/192 [00:55<00:37,  2.07it/s] 60%|█████▉    | 115/192 [00:56<00:37,  2.07it/s] 60%|██████    | 116/192 [00:56<00:36,  2.07it/s] 61%|██████    | 117/192 [00:57<00:36,  2.07it/s] 61%|██████▏   | 118/192 [00:57<00:35,  2.07it/s] 62%|██████▏   | 119/192 [00:58<00:35,  2.07it/s] 62%|██████▎   | 120/192 [00:58<00:34,  2.07it/s] 63%|██████▎   | 121/192 [00:59<00:34,  2.07it/s] 64%|██████▎   | 122/192 [00:59<00:33,  2.07it/s] 64%|██████▍   | 123/192 [01:00<00:33,  2.07it/s] 65%|██████▍   | 124/192 [01:00<00:32,  2.07it/s] 65%|██████▌   | 125/192 [01:01<00:32,  2.07it/s] 66%|██████▌   | 126/192 [01:01<00:31,  2.07it/s] 66%|██████▌   | 127/192 [01:02<00:31,  2.09it/s] 67%|██████▋   | 128/192 [01:02<00:27,  2.32it/s] 67%|██████▋   | 129/192 [01:02<00:29,  2.15it/s] 68%|██████▊   | 130/192 [01:03<00:29,  2.12it/s] 68%|██████▊   | 131/192 [01:03<00:28,  2.11it/s] 69%|██████▉   | 132/192 [01:04<00:28,  2.09it/s] 69%|██████▉   | 133/192 [01:04<00:28,  2.09it/s] 70%|██████▉   | 134/192 [01:05<00:27,  2.08it/s] 70%|███████   | 135/192 [01:05<00:27,  2.08it/s] 71%|███████   | 136/192 [01:06<00:26,  2.08it/s] 71%|███████▏  | 137/192 [01:06<00:26,  2.07it/s] 72%|███████▏  | 138/192 [01:07<00:26,  2.07it/s] 72%|███████▏  | 139/192 [01:07<00:25,  2.07it/s] 73%|███████▎  | 140/192 [01:08<00:25,  2.07it/s] 73%|███████▎  | 141/192 [01:08<00:24,  2.07it/s] 74%|███████▍  | 142/192 [01:09<00:24,  2.07it/s] 74%|███████▍  | 143/192 [01:09<00:23,  2.07it/s] 75%|███████▌  | 144/192 [01:10<00:23,  2.07it/s] 76%|███████▌  | 145/192 [01:10<00:22,  2.07it/s] 76%|███████▌  | 146/192 [01:11<00:22,  2.07it/s] 77%|███████▋  | 147/192 [01:11<00:21,  2.07it/s] 77%|███████▋  | 148/192 [01:12<00:21,  2.07it/s] 78%|███████▊  | 149/192 [01:12<00:20,  2.07it/s] 78%|███████▊  | 150/192 [01:13<00:20,  2.07it/s] 79%|███████▊  | 151/192 [01:13<00:19,  2.07it/s] 79%|███████▉  | 152/192 [01:13<00:19,  2.07it/s] 80%|███████▉  | 153/192 [01:14<00:18,  2.07it/s] 80%|████████  | 154/192 [01:14<00:18,  2.07it/s] 81%|████████  | 155/192 [01:15<00:17,  2.07it/s] 81%|████████▏ | 156/192 [01:15<00:17,  2.07it/s] 82%|████████▏ | 157/192 [01:16<00:16,  2.07it/s] 82%|████████▏ | 158/192 [01:16<00:16,  2.07it/s] 83%|████████▎ | 159/192 [01:17<00:15,  2.07it/s] 83%|████████▎ | 160/192 [01:17<00:15,  2.07it/s] 84%|████████▍ | 161/192 [01:18<00:14,  2.07it/s] 84%|████████▍ | 162/192 [01:18<00:14,  2.07it/s] 85%|████████▍ | 163/192 [01:19<00:14,  2.07it/s] 85%|████████▌ | 164/192 [01:19<00:13,  2.07it/s] 86%|████████▌ | 165/192 [01:20<00:13,  2.07it/s] 86%|████████▋ | 166/192 [01:20<00:12,  2.07it/s] 87%|████████▋ | 167/192 [01:21<00:12,  2.07it/s] 88%|████████▊ | 168/192 [01:21<00:11,  2.07it/s] 88%|████████▊ | 169/192 [01:22<00:11,  2.07it/s] 89%|████████▊ | 170/192 [01:22<00:10,  2.07it/s] 89%|████████▉ | 171/192 [01:23<00:10,  2.07it/s] 90%|████████▉ | 172/192 [01:23<00:09,  2.07it/s] 90%|█████████ | 173/192 [01:24<00:09,  2.07it/s] 91%|█████████ | 174/192 [01:24<00:08,  2.07it/s] 91%|█████████ | 175/192 [01:25<00:08,  2.07it/s] 92%|█████████▏| 176/192 [01:25<00:07,  2.07it/s] 92%|█████████▏| 177/192 [01:26<00:07,  2.07it/s] 93%|█████████▎| 178/192 [01:26<00:06,  2.07it/s] 93%|█████████▎| 179/192 [01:27<00:06,  2.07it/s] 94%|█████████▍| 180/192 [01:27<00:05,  2.07it/s] 94%|█████████▍| 181/192 [01:27<00:05,  2.07it/s] 95%|█████████▍| 182/192 [01:28<00:04,  2.07it/s] 95%|█████████▌| 183/192 [01:28<00:04,  2.07it/s] 96%|█████████▌| 184/192 [01:29<00:03,  2.07it/s] 96%|█████████▋| 185/192 [01:29<00:03,  2.07it/s] 97%|█████████▋| 186/192 [01:30<00:02,  2.07it/s] 97%|█████████▋| 187/192 [01:30<00:02,  2.07it/s] 98%|█████████▊| 188/192 [01:31<00:01,  2.07it/s] 98%|█████████▊| 189/192 [01:31<00:01,  2.07it/s] 99%|█████████▉| 190/192 [01:32<00:00,  2.07it/s] 99%|█████████▉| 191/192 [01:32<00:00,  2.09it/s]100%|██████████| 192/192 [01:33<00:00,  2.32it/s][INFO|trainer.py:1934] 2023-07-14 07:53:46,827 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+                                                 100%|██████████| 192/192 [01:33<00:00,  2.32it/s]100%|██████████| 192/192 [01:33<00:00,  2.06it/s]
+[INFO|trainer.py:2807] 2023-07-14 07:53:46,829 >> Saving model checkpoint to test-mlm
+[INFO|configuration_utils.py:458] 2023-07-14 07:53:46,879 >> Configuration saved in test-mlm/config.json
+[INFO|modeling_utils.py:1851] 2023-07-14 07:53:47,358 >> Model weights saved in test-mlm/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2214] 2023-07-14 07:53:47,395 >> tokenizer config file saved in test-mlm/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2221] 2023-07-14 07:53:47,417 >> Special tokens file saved in test-mlm/special_tokens_map.json
+{'train_runtime': 93.128, 'train_samples_per_second': 16.429, 'train_steps_per_second': 2.062, 'train_loss': 1.2854893207550049, 'epoch': 3.0}
+***** train metrics *****
+  epoch                    =        3.0
+  train_loss               =     1.2855
+  train_runtime            = 0:01:33.12
+  train_samples            =        510
+  train_samples_per_second =     16.429
+  train_steps_per_second   =      2.062
+07/14/2023 07:53:47 - INFO - __main__ - *** Evaluate ***
+[INFO|trainer.py:763] 2023-07-14 07:53:47,503 >> The following columns in the evaluation set don't have a corresponding argument in `EsmForMaskedLM.forward` and have been ignored: special_tokens_mask. If special_tokens_mask are not expected by `EsmForMaskedLM.forward`,  you can safely ignore this message.
+[INFO|trainer.py:3081] 2023-07-14 07:53:47,505 >> ***** Running Evaluation *****
+[INFO|trainer.py:3083] 2023-07-14 07:53:47,505 >>   Num examples = 127
+[INFO|trainer.py:3086] 2023-07-14 07:53:47,505 >>   Batch size = 8
+  0%|          | 0/16 [00:00<?, ?it/s] 12%|█▎        | 2/16 [00:00<00:01,  9.48it/s] 19%|█▉        | 3/16 [00:00<00:01,  6.69it/s] 25%|██▌       | 4/16 [00:00<00:02,  5.80it/s] 31%|███▏      | 5/16 [00:00<00:02,  5.39it/s] 38%|███▊      | 6/16 [00:01<00:01,  5.16it/s] 44%|████▍     | 7/16 [00:01<00:01,  5.02it/s] 50%|█████     | 8/16 [00:01<00:01,  4.93it/s] 56%|█████▋    | 9/16 [00:01<00:01,  4.87it/s] 62%|██████▎   | 10/16 [00:01<00:01,  4.82it/s] 69%|██████▉   | 11/16 [00:02<00:01,  4.80it/s] 75%|███████▌  | 12/16 [00:02<00:00,  4.79it/s] 81%|████████▏ | 13/16 [00:02<00:00,  4.77it/s] 88%|████████▊ | 14/16 [00:02<00:00,  4.77it/s] 94%|█████████▍| 15/16 [00:02<00:00,  4.82it/s]100%|██████████| 16/16 [00:03<00:00,  5.41it/s]100%|██████████| 16/16 [00:03<00:00,  5.05it/s]
+[INFO|modelcard.py:452] 2023-07-14 07:53:51,111 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Masked Language Modeling', 'type': 'fill-mask'}, 'metrics': [{'name': 'Accuracy', 'type': 'accuracy', 'value': 0.649638469225795}]}
+***** eval metrics *****
+  epoch                   =        3.0
+  eval_accuracy           =     0.6496
+  eval_loss               =     1.1621
+  eval_runtime            = 0:00:03.44
+  eval_samples            =        127
+  eval_samples_per_second =     36.886
+  eval_steps_per_second   =      4.647
+  perplexity              =     3.1967

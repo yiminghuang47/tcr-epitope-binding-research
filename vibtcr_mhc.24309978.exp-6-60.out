@@ -1,0 +1,11 @@
+  0%|          | 0/50 [00:00<?, ?it/s]  0%|          | 0/50 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "vibtcr_beta_only.py", line 291, in <module>
+    train_loader, val_loader, early_stopper_patience, monitor)
+  File "/home/yhuang5/vibtcr/vibtcr/vibtcr/base/trainer.py", line 117, in train
+    self.train_step(train_loader)
+  File "/home/yhuang5/vibtcr/vibtcr/vibtcr/mvib/mvib_trainer.py", line 97, in train_step
+    pep, cdr3b, gt, cdr3a = self._process_batch(batch)
+  File "/home/yhuang5/vibtcr/vibtcr/vibtcr/mvib/mvib_trainer.py", line 83, in _process_batch
+    pep, cdr3b, gt, cdr3a = batch
+ValueError: not enough values to unpack (expected 4, got 3)
